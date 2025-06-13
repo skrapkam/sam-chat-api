@@ -12,7 +12,7 @@ import {
 export const runtime = "edge";
 
 // At the top of the file
-const ALLOWED_ORIGIN = "http://localhost:8000"; // For local dev. Use your real site in prod!
+const ALLOWED_ORIGIN = "*"; // for quick testing only!
 
 export async function OPTIONS() {
   return new Response(null, {
@@ -98,10 +98,12 @@ ${projectInfo}
 
   return new Response(stream, {
     headers: {
-      "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
-      "Content-Type": "text/event-stream",
-      "Cache-Control": "no-cache",
-      "Connection": "keep-alive",
-    },
+        "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+      },
   });
 }
