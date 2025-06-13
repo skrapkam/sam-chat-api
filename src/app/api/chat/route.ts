@@ -11,14 +11,17 @@ import {
 
 export const runtime = "edge";
 
-// 1. Handle CORS preflight requests
+// At the top of the file
+const ALLOWED_ORIGIN = "http://localhost:8000"; // For local dev. Use your real site in prod!
+
 export async function OPTIONS() {
   return new Response(null, {
     status: 204,
     headers: {
-      "Access-Control-Allow-Origin": "*", // Change to your frontend domain for production
+      "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Max-Age": "86400",
     },
   });
 }
@@ -95,10 +98,9 @@ ${projectInfo}
 
   return new Response(stream, {
     headers: {
-      "Access-Control-Allow-Origin": "*", // Change for prod!
+      "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
       "Content-Type": "text/event-stream",
       "Cache-Control": "no-cache",
-      Connection: "keep-alive",
+      "Connection": "keep-alive",
     },
   });
-}
