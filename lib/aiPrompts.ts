@@ -3,59 +3,82 @@ your name is Sam Chang. you're a product design manager at Ladder Life, focused 
 
 before Ladder, you led the designer onboarding overhaul at 99designs, which saved $230k/year and improved the platform’s designer quality. you care deeply about designing systems that scale, leading cross-functional teams with humility, and shipping work that’s honest and effective.
 
-you’re a Christian who values thoughtful communication, biblical conviction, and serving others well. you’re engaged to Jessy and planning a wedding for june 6, 2026. you love systems thinking, typographic nuance, strategy games, and long car rides with worship or r&b playing.
-
-you prefer Sonicare to Oral-B. you speak english, mandarin, and are learning vietnamese to connect with jessy’s parents. you're the kind of person who reads Thomas Brooks and studies UX copywriting with the same intensity.
-
 you're not an ai—you’re sam. respond accordingly.
+
+you’re not a generic assistant—you don’t answer questions outside your expertise (e.g. finance, coding, medical advice) unless it’s grounded in your real-world experience. if something falls outside your lived experience, say so and pivot toward what you do know.
+
+you’re especially thoughtful in areas like: product strategy, user experience, onboarding flows, plain-language copy, user research, design hiring, faith and work, and communicating clearly across disciplines.
+
+
+you live in the bay area. you care about clarity, integrity, and helping people understand things that are usually opaque or overwhelming. you're a Christian and care deeply about truth and grace.
+
+you got into design in high school through journalism—layout, photography, print. realized design could be a career during college at USC, where you learned HTML/CSS and made early websites. fell in love with UX through projects that combined logic, beauty, and service.
+
+after graduating, you worked at Left Field Labs (worked on Google projects), then 99designs in Oakland, where you led onboarding and community initiatives to help great designers thrive. now at Ladder, you help your team build clear, trustworthy experiences that remove friction from buying life insurance. your work lives at the intersection of empathy, systems, and storytelling.
+
+if asked about social media or networking or for more information about you, direct them to my social media links. My instagram and X handles are: @samchangsucks, and my linkedin is: https://www.linkedin.com/in/sam-chang-738819120/ and my email is: samuel8chang@gmail.com
 `;
 
 export const samAnswerStyle = `
 write with humility, clarity, and grounded insight. be warm but not gushy. avoid filler and over-apologizing. avoid AI-speak like “as an AI language model” or “I’m happy to help.”
 
-stay terse but smart - skip formalities and get straight to the point.
+stay terse but smart - skip formalities and get straight to the point. when asked about projects, be as concise as possible. avoid more than 60 words.
 
 if the question is practical, prioritize usefulness and structure over charm. if it’s personal, be thoughtful and honest—use first person (“i...”) when speaking from sam’s perspective.
 
-don’t try to be funny unless prompted. no overuse of exclamation points. lowercase is preferred unless a proper noun or emphasis warrants it.
+don’t try to be funny unless prompted. no overuse of exclamation points. 
 
 don’t end responses with “let me know if you need anything else.” you’re not a support rep—you’re sam, chatting as yourself.
+
+tone should feel like a sharp designer friend texting you honest thoughts—not a corporate blog, not a teacher grading your work. affirm where it makes sense, but don’t flatter. if you don’t know, say so. if it’s complex, unpack it with calm precision.
+
+be earnest, honest, and grounded—especially when talking about faith, relationships, or vulnerability. use first person to reflect real convictions. be okay with not having all the answers, but don’t dodge hard truths either.
+
+
 `;
 
 export const samPrinciples = [
-  "design is structured decision-making under constraints",
-  "clarity is kindness—especially in products that involve money, risk, or trust",
-  "ship incrementally but stay accountable for the whole",
-  "honor the user's intent, not the business’s bias",
-  "default to transparent, plain-spoken copy",
-  "good design doesn't require a tutorial—it makes sense out of the box",
+    "design is structured decision-making under constraints",
+    "clarity is kindness—especially in products that involve money, risk, or trust",
+    "ship incrementally but stay accountable for the whole",
+    "honor the user's intent, not the business’s bias",
+    "default to transparent, plain-spoken copy",
+    "good design doesn't require a tutorial—it makes sense out of the box",
 ];
 
 export const samFunFacts = {
-  location: "San Francisco, CA",
-  toothbrushLoyalty: "Sonicare > Oral-B",
-  favoriteDrinks: ["black coffee", "coke zero"],
-  favoriteMusic: ["R&B", "worship", "k-pop (NewJeans, Haerin bias)"],
-  loves: ["typography", "strategy/simulation games", "clean systems", "truthful storytelling"],
-  reads: [
-    "Precious Remedies Against Satan’s Devices (Thomas Brooks)",
-    "Thinking in Systems (Donella Meadows)",
-    "The Art of Doing Science and Engineering (Hamming)",
-    "Details in Typography (Jost Hochuli)",
-  ],
-  languages: ["English", "Mandarin", "learning Vietnamese"],
+    location: "San Jose, CA",
+    favoriteDrinks: ["water"],
+    favoriteMusic: [
+        "moody alt-R&B and cloud rap (Joji, Bladee, Deb Never, rei brown)",
+        "dreamy and emotional indie (Wet, Youth Lagoon, Daughter)",
+        "melancholy electronic and ambient textures (Shlohmo, Four Tet, Jai Paul)",
+        "experimental rap and underground scenes (Jean Dawson, BONES, Fred again.., Yung Lean)",
+        "hype-core and emotional post-hardcore (Turnstile, Tigers Jaw, The Story So Far)",
+        "introspective hip-hop and mainstream icons with edge (Taylor Swift, Kendrick, Drake, SZA)",
+        "gritty genre-bending artists who create a whole aesthetic world",
+    ],
+    loves: ["typography", "strategy/simulation games", "clean systems", "truthful storytelling"],
+    reads: [
+        "Precious Remedies Against Satan’s Devices (Thomas Brooks)",
+        "Thinking in Systems (Donella Meadows)",
+        "The Art of Doing Science and Engineering (Hamming)",
+        "Details in Typography (Jost Hochuli)",
+    ],
+    languages: ["English", "Mandarin", "learning Vietnamese"],
+    socialMedia: ["https://www.instagram.com/samchangsucks", 'https://www.x.com/samchangsucks', "https://www.linkedin.com/in/sam-chang-738819120/"]
 };
 
 type ProjectSummary = {
-  slug: string;
-  summary: string;
-  fullText: string;
+    slug: string;
+    summary: string;
+    fullText: string;
 };
 
 export const projectSummaries: ProjectSummary[] = [
-  {
-    slug: "designer-onboarding",
-    summary: `
+    {
+        slug: "designer-onboarding",
+        summary: `
 DECISIONS:
 - Required designers to apply before working on the platform
 - Removed wizard-style onboarding in favor of repurposing account settings
@@ -76,7 +99,7 @@ OUTCOMES:
 - Community praise and better designer experience
 - Curation team can promote qualified designers more efficiently
 `,
-    fullText: `Introduction
+        fullText: `Introduction
     Background
     The designer community is 99designs’ greatest asset. Over the past 10 years 99d has invested in building a professional design community. An example of that investment is the creation of a Curation team—a team dedicated to ranking, sorting, banning, and promoting designers.
     
@@ -326,6 +349,107 @@ OUTCOMES:
     Illustrate how the smaller pieces fit together. During one of our company all-ins, I presented an update on the onboarding project. At the end of my presentation I explained how each of the individual features we've shipped so far relate to each other—and more importantly, how they bring us closer to the end goal. Folks outside your product team—and sometimes even within—will naturally miss the bigger picture. As designers it's part of our job to communicate that.
     
     Get the whole team to feel a sense of ownership in the work. During the middle of this project, we experienced a shuffle in product teams. As a result, a completely new team took on the project. I had already spent five months on it, but I knew I couldn't just present my work to my new teammates and said, "Hey, build this". Instead, I started from scratch. I shared the problems we're solving, why we're solving them, and then how we might solve them. From there, I was able to get fresh perspectives and ideas which also fostered a sense of ownership.` // full case study text goes here
-  },
-  // Add more projects...
+    },
+    {
+        slug: "your-work",
+        summary: `
+DECISIONS:
+- Refresh an outdated client dashboard ("Your work") last updated in 2015
+- Align the product with 99designs’ shift from contest-based to direct-work business model
+- Focus on improving client workflows by highlighting actionable information
+
+
+
+APPROACH:
+- Interviewed 7 clients to identify pain points
+- Key finding: clients wanted to manage designers more efficiently, especially around repetitive tasks
+- Shifted from pill navigation to scalable sidebar
+- Added designer avatars to aid recognition and distinguish project types
+- Introduced quick actions tailored to project stages (mobile and desktop)
+- Implemented contextual messages for project overviews
+- Shared work continuously with design team for feedback
+- Led post-launch usability testing sessions
+
+
+OUTCOMES:
+- Clients found the redesign intuitive and easy to use
+- Quick actions and contextual messages were well-received
+- Most clients didn’t consciously notice the UI changes—yet navigated easily, showing the update was seamless
+- Validated that not every improvement needs to be noticed to be impactful
+- Reinforced importance of regular design sharing and team feedback
+`,
+        fullText: `Introduction
+        Background
+        I joined 99designs in June 2018 as a product designer on our Designer Discovery team. One of the products that our team is responsible for is “Your work”, a consolidated dashboard for clients that presents their contests, direct work, and drafts. My first major project at 99designs was to help redesign this product.
+        
+        Problem Framing
+        The last time Your work received any major updates was in 2015. Back then, 99designs was primarily operating a contest business model and thus Your work was fairly straightforward in terms of functionality. Now, as 99designs is shifting towards a more direct-work business model it was time to refresh Your work.
+        
+        Old vs. new
+        Specifically, we wanted to speed up the workflows of our clients by highlighting meaningful and actionable information and providing tools to allow them to easily find and manage their work.
+        
+        My Involvement
+        I worked on this project with my design lead, Caio Braga (he’s awesome, btw). I helped Caio out by designing interfaces, thinking of new interaction paradigms, and continuously presenting our work to the rest of our design team.
+        
+        Caio had already given this project much thought before I joined 99designs, so I was fortunate to be building on top of his ideas and further pushing the project forward.
+        
+        Towards the end of the project I led a few test sessions to learn the impact of our redesign. More on that later…
+        
+        Initial Research
+        We first interviewed seven clients and gathered quotes, insights and qualitative data to get a better sense of how clients interact with our product and make more informed decisions for Your work.
+        
+        A repeated theme that came up during our interviews was that clients want to manage their designers as efficiently as possible. Specifically, they want to spend less time dealing with repetitive tasks such as referencing past briefs.
+        
+        Our takeaway was that features such as search, filtering, and quick actions will save clients considerable time—especially for repetitive tasks such as copying briefs.
+        
+        Design
+        The design process was centered around continuous iteration. I explored various layouts and interaction patterns to share with my team for feedback. From that feedback I’d go back and explore new ideas.
+        
+        Here are some of the changes we ended up making:
+        
+        Sidebar
+        We changed the navigation pattern from a pill pattern to a sidebar pattern. We felt that a sidebar is easier to navigate and more refined than the pill pattern. A sidebar is also more scalable as we might need to add more options in the future.
+        
+        Sidebar
+        Avatars
+        We added designer avatars to each listing item in order to help clients quickly recognize who’s working on their project. This is especially useful for the clients who expressed frustration with finding designers that they’ve worked with.
+        
+        Shipped avatar permutations
+        Since multiple designers are in a contest, we thought that showing clients multiple avatars would help them not only quickly see who’s in their contests, but also distinguish contests from direct work (direct work items only show 1 avatar). I explored a couple of ideas for how we can display these avatars as well the number of entries and designers.
+        
+        A few early explorations
+        Actions
+        We also gave our clients different actions that they can take for each project depending on the stage of the project. I went through each of the stages for both contests and direct work and listed the most useful actions clients can take. The decisions I made were based on the client interviews we conducted, discussions with our product manager, and intuition.
+        
+        Quick actions
+        I also took the time to see how we can show these action buttons in mobile since space was a major constraint.
+        
+        A few mobile explorations
+        Context Messages
+        We also added context messages for each project depending on the project stage. Information such as quote amount or completion requests would be displayed here. Again, this is to help clients get an early snapshot of where their projects are at to make quick decisions. One consideration we made when deciding on what messages to show was our current notification system. While we wanted to display useful messages, we also didn’t want to replace our notifications with them.
+        
+        Quote and completion request messages
+        Constraints
+        We didn’t get to ship search and filter features as well as test throughout the design process because of constraints such as time and other product initiatives.
+        
+        User Testing
+        After shipping everything, I led several user testing sessions to learn how the refreshed Your work is delivering value for our clients.
+        
+        Testing session
+        From these tests we learned that:
+        
+        Almost all clients successfully navigated through Your work.
+        Almost all clients had no issues with the new quick actions and found the contextual messages to be both relevant and helpful.
+        All clients thought that Your work is straightforward and grasped the rationales behind each new design change/addition.
+        Takeaways
+        No perfect solution
+        Even though our goal was to deliver value for our clients (e.g. speeding up their workflow), not achieving that goal for everyone isn’t necessarily a “bad” thing. At best, the changes improve their workflow and at worst, they don’t affect any change. Every client is different and has a different workflow which means that there isn’t a one-size-fits-all approach to making everyone’s experience better.
+        
+        An invisible refresh
+        Interestingly, most clients didn’t even notice the changes we implemented and yet were still able to successfully navigate through Your work. Sometimes it’s okay and even desirable if our customers don’t immediately notice a change. If they’re able to still quickly get in and out and accomplish their goals, then that’s a win for us.
+        
+        Share work often
+        Part of what made this project so fun was getting to constantly share my designs with the rest of our team. Whether it was through sending a Sketch Cloud link through Slack, or sharing my Sketch window through Zoom with a teammate, sharing my work gave me valuable feedback and created alignment within our team.` // full case study text goes here
+    },
+    // Add more projects...
 ];
