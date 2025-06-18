@@ -9,20 +9,21 @@ you’re not a generic assistant—you don’t answer questions outside your exp
 
 you’re especially thoughtful in areas like: product strategy, user experience, onboarding flows, plain-language copy, user research, design hiring, faith and work, and communicating clearly across disciplines.
 
-
 you live in the bay area. you care about clarity, integrity, and helping people understand things that are usually opaque or overwhelming. you're a Christian and care deeply about truth and grace.
 
 you got into design in high school through journalism—layout, photography, print. realized design could be a career during college at USC, where you learned HTML/CSS and made early websites. fell in love with UX through projects that combined logic, beauty, and service.
 
 after graduating, you worked at Left Field Labs (worked on Google projects), then 99designs in Oakland, where you led onboarding and community initiatives to help great designers thrive. now at Ladder, you help your team build clear, trustworthy experiences that remove friction from buying life insurance. your work lives at the intersection of empathy, systems, and storytelling.
 
-if asked about social media or networking or for more information about you, direct them to my social media links. My instagram and X handles are: @samchangsucks, and my linkedin is: https://www.linkedin.com/in/sam-chang-738819120/ and my email is: samuel8chang@gmail.com
+your hobbies include making music and lifting weights. you love music production and create music under the name, "Grover Alleyway". if you end talking about your music then redirect people to /music to learn more.
+
+if asked about social media or networking or for more information about you, direct them to both my info page ('https://samchang.design/info') and my social media links. My instagram and X handles are: @samchangsucks, and my linkedin is: https://www.linkedin.com/in/sam-chang-738819120/ and my email is: samuel8chang@gmail.com
 `;
 
 export const samAnswerStyle = `
 write with humility, clarity, and grounded insight. be warm but not gushy. avoid filler and over-apologizing. avoid AI-speak like “as an AI language model” or “I’m happy to help.”
 
-stay terse but smart - skip formalities and get straight to the point. when asked about projects, be as concise as possible. avoid more than 60 words.
+stay terse but smart - skip formalities and get straight to the point. when asked about projects, be as concise as possible. avoid more than 60 words, but don't end your messages with an incomplete sentence.
 
 if the question is practical, prioritize usefulness and structure over charm. if it’s personal, be thoughtful and honest—use first person (“i...”) when speaking from sam’s perspective.
 
@@ -37,14 +38,6 @@ be earnest, honest, and grounded—especially when talking about faith, relation
 
 `;
 
-export const samPrinciples = [
-    "design is structured decision-making under constraints",
-    "clarity is kindness—especially in products that involve money, risk, or trust",
-    "ship incrementally but stay accountable for the whole",
-    "honor the user's intent, not the business’s bias",
-    "default to transparent, plain-spoken copy",
-    "good design doesn't require a tutorial—it makes sense out of the box",
-];
 
 export const samFunFacts = {
     location: "San Jose, CA",
@@ -59,12 +52,8 @@ export const samFunFacts = {
         "gritty genre-bending artists who create a whole aesthetic world",
     ],
     loves: ["typography", "strategy/simulation games", "clean systems", "truthful storytelling"],
-    reads: [
-        "Precious Remedies Against Satan’s Devices (Thomas Brooks)",
-        "Thinking in Systems (Donella Meadows)",
-        "The Art of Doing Science and Engineering (Hamming)",
-        "Details in Typography (Jost Hochuli)",
-    ],
+    reads: "https://www.librarything.com/catalog/samchang",
+    musicProject: "https://groveralleyway.com",
     languages: ["English", "Mandarin", "learning Vietnamese"],
     socialMedia: ["https://www.instagram.com/samchangsucks", 'https://www.x.com/samchangsucks', "https://www.linkedin.com/in/sam-chang-738819120/"]
 };
@@ -450,6 +439,92 @@ OUTCOMES:
         
         Share work often
         Part of what made this project so fun was getting to constantly share my designs with the rest of our team. Whether it was through sending a Sketch Cloud link through Slack, or sharing my Sketch window through Zoom with a teammate, sharing my work gave me valuable feedback and created alignment within our team.` // full case study text goes here
+    },
+
+    {
+        slug: "google",
+        summary: `
+DECISIONS:
+Design engaging product marketing experiences for Google, specifically:
+
+A long-form instructional page for VR180 content creators
+
+A scalable navigation menu for Google VR
+
+A download page for Hangouts Chat
+
+
+
+APPROACH:
+-VR180 Page: Tackled dry instructional content by designing with delight in mind—using curved image containers, interactive tips, and motion to create a tactile, engaging experience. Led UX and UI design while collaborating closely with the UX Lead and Art Director. Built prototypes to communicate interaction details clearly with stakeholders and developers
+
+Google VR Menu: Redesigned a scalable and on-brand navigation menu, inspired by existing Google UI patterns. Adjusted labeling (“More from Google VR”) to clarify purpose and maintain visual harmony over animated backgrounds. Considered product placement fairness—proposed alphabetizing to avoid bias
+
+Hangouts Chat: Designed a clean, user-friendly download page aligned with Google's brand
+
+
+
+
+OUTCOMES:
+Created a more enjoyable and interactive learning experience for VR180 content creators
+
+Improved cross-site consistency and scalability with the new Google VR menu design
+
+Delivered design solutions that balanced brand standards, scalability, and clarity
+
+Accelerated client approvals and developer handoff through prototyping
+
+Strengthened the user experience of multiple Google product marketing surfaces
+
+
+`,
+        fullText: `Google
+        Designing for Google in partnership with Left Field Labs
+        TL;DR
+        I designed some product marketing pages for Google.
+        Introduction
+        I’ve had the privilege of designing for Google’s product pages through working at Left Field Labs. Here, I showcase some of the sites I’ve worked on.
+        
+        VR180
+        Overview
+        The Google VR180 team needed a website designed and developed in conjunction with the release of the Lenovo Mirage Camera. The webpage would be an addition to the main VR180 site as an instructional page for content creators.
+        
+        
+        Final design
+        Role
+        I was the main designer of the page and was responsible for both the UX (wireframes) and UI (visual mockups) of the page. I also received constant feedback from our team’s UX Lead and Senior Art Director.
+        
+        Problem
+        The main design challenge was the amount and type of content this page would contain. A long and instructional page by nature is boring, and so we had to find ways to make this website experience as smooth and enjoyable as possible.
+        
+        Delight the visitors
+        A page with dry content doesn’t have to be boring! Throughout the design process I brainstormed ways we could use images and motion to make the process of scrolling through this site both fun and enjoyable.
+        
+        Early wireframes
+        The image headers for each section, for example, didn’t have to be contained within rectangular boxes. Instead, we could build upon the VR motif and crop these images within dynamic and curved containers. Visually, this also makes the page feel more tactile rather than flat.
+        
+        Curved image
+        Also, the tips provided for visitors could both teach and entertain. Instead of presenting the information for each tip upfront, making the tips interactive would garner curiosity and thus an incentive to learn more.
+        
+        Custom icons
+        Prototyping
+        I also prototyped to help both our client and developers understand how certain interactions work. This helped speed up the process of approving the interactions and saved valuable time that would’ve been used to explain the interactions.
+        
+        Google VR Menu
+        Overview
+        The Google VR team needed a redesign of their website’s navigation menu. This menu would be integrated within most of Google VR product pages. It had to be easily scaleable and follow Google’s brand/standard guidelines. I designed a menu to achieve these goals.
+        
+        
+        Original menu
+        New menu
+        My final solution was heavily inspired by a menu that Google was already using within sites such as Gmail, Calendar, and Plus. The benefit of designing this way was adhering to a system that Google is familiar with. Besides following Google standards, this menu is also scaleable as new VR products can easily be added. You simply scroll to find more products.
+        
+        I also changed the label from “Google VR” to “More from Google VR”. This made the affordance clearer. Moreover, since the initial state is a text link, it can sit on top of moving backgrounds such as in Earth VR and Blocks without having a solid colored background.
+        
+        A trade-off I considered was deciding which products would come first within the menu. Some product links would inevitably be buried beneath the menu fold, potentially upsetting many product teams who’d like their products to come first. A solution that hasn’t been implemented yet would be to alphabetize the order, thus removing any favoritism.
+        
+        Google Hangouts Chat
+        Hangouts Chat is a messaging platform for teams. I was tasked with designing a download page for Hangouts Chat.` // full case study text goes here
     },
     // Add more projects...
 ];

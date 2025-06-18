@@ -4,7 +4,6 @@ import { ChatCompletionMessageParam } from "openai/resources/chat";
 import {
   samPersona,
   samAnswerStyle,
-  samPrinciples,
   samFunFacts,
   projectSummaries,
 } from "../../../../lib/aiPrompts"; // Adjust as needed
@@ -54,9 +53,6 @@ ${samPersona}
 
 How you should respond:
 ${samAnswerStyle}
-
-Your core design principles:
-${samPrinciples.join("\n")}
 
 Fun facts:
 ${funFactsFormatted}
