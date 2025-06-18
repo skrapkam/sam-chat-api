@@ -528,5 +528,105 @@ Strengthened the user experience of multiple Google product marketing surfaces
         Google Hangouts Chat
         Hangouts Chat is a messaging platform for teams. I was tasked with designing a download page for Hangouts Chat.` // full case study text goes here
     },
+    {
+        slug: "ladder",
+        summary: `
+Company Overview:
+
+Ladder is an insurtech company delivering term life insurance through a fully digital process.
+
+Role:
+
+Senior Product Design Manager, leading both product and visual design teams since 2021.
+
+2024 — Billing Checkout & Design Leadership:
+
+Led most of Ladder’s design team, focusing on cross-functional collaboration and team growth.
+
+Designed a new billing checkout flow that improved contribution margin by increasing conversion and reducing wasted spend on non-purchasing users.
+
+2023 — Re-route Project:
+
+Partnered with Machine Learning to design a solution that matches users to the best-fit policy, helping more families get covered.
+
+2022 — Retention & Affordability:
+
+Led a retention-focused product team and designed a comprehensive solution to reduce first payment failures.
+
+Created an affordability flow in the application funnel, helping users find policies within their budget and improving coverage uptake.
+
+2021 — Homepage & Transparency:
+
+Redesigned Ladder’s homepage to better communicate the brand and convert new users.
+
+Improved offer transparency around coverage, fees, and policy details.
+
+2020 — Brand, Billing, Calculator, Carousel:
+
+Led Ladder’s rebrand, enhancing visual identity and approachability across digital touchpoints.
+
+Optimized billing transaction pages for higher conversion (credit card and ACH payments).
+
+Refined Ladder’s life insurance calculator UX for clearer coverage estimation.
+
+Designed the Carousel page to improve user experience during underwriting decision wait times.
+
+
+
+
+`,
+        fullText: `Introduction
+Ladder is an insurtech company that provides term life insurance policies through a digitized process. At Ladder, I currently work on a variety of surfaces, from rethinking how our life insurance application looks to shipping a new payments experience. Here are a selection of projects I've worked on since 2020.
+
+2024
+Design leadership
+For the past three years, I’ve had the privilege of leading most of our design team (product and visual) at Ladder as a senior product design manager. Read below to learn more about my experience leading the team.
+
+
+Billing checkout
+Over the past few years, our company faced challenges in selling policies efficiently, with revenue impacted by spending on individuals who ultimately didn’t make a purchase. In 2024, I designed a solution that transformed how policies are evaluated and purchased, significantly improving our contribution margin.
+
+
+2023
+Re-route
+Ladder’s mission is to protect families by helping people get covered through a policy. Still, we've had setbacks matching everyone with the best policy, which is not great for both our users and Ladder. In 2023, our Machine Learning team developed a model to improve these matches. I helped design a solution that utilizes this model.
+
+
+2022
+First payment failure
+In mid-2022, I became the design lead for a new product team dedicated solely to customer retention. As part of this new team, I designed a comprehensive solution prevent customers from missing their first payment.
+
+
+Affordability
+Ladder’s mission is to protect families by helping people get covered through a policy that is right for them. As policy offers become more expensive, however, the rate of users accepting their policies drops. Users who feel that life insurance is outside of their affordable budget will not get the coverage their loved ones need. And rather than lowering their coverage amount, users elect not to get life insurance altogether due to it feeling unaffordable. I designed a treatment in our funnel to help users select a policy that fits within their budget.
+
+
+2021
+Homepage redesign
+A homepage for a product is a sacred space. It’s where the first interaction between a potential user and your brand occurs. It’s where you’re given your first opportunity to communicate who you are as a company to a potential customer. The homepage encapsulates your identity in one page. And in 2021, I was given the opportunity to rethink and redesign Ladder’s homepage.
+
+
+Offer transparency
+Our customers value transparency, and transparency can be seen as being concise and clear of Ladder's propositions such as 1) what's covered, or not covered, or 2) Ladder Policies do not have fees, billing fees, late fees, cancellation fees.
+
+
+2020
+Ladder rebrand
+Over the last three years, Ladder has focused on a brand filled with delight. Everything from the layout to the tone was centered around making life insurance more approachable. As the system became more complex, and we learned from each new user interaction, we decided that it was time to enhance our brand identity, therefore implementing a more profound user experience.
+
+
+Billing
+As a term life insurance company, Ladder relies on a subscription-based payment model. Users can choose to pay for their policies monthly with either their credit cards or through their bank accounts (ACH).
+
+I was tasked with improving the conversion metrics for our billing transaction page—the page where users input either their credit card or ACH information.
+
+
+Calculator
+Like most life insurance providers, Ladder has a calculator that gives users interested in life insurance an overview of how much coverage they might need. Users will input different information about themselves into the calculator and receive an estimated coverage amount.
+
+
+Carousel page
+After a user submits a life insurance application with us, we surface an intermediary page that we call the Carousel page. As a user is on this page, we are making a decision whether to offer that user a life insurance policy or not. The Carousel page is thus meant to be a place where users can wait and take a break from inputting information.` // full case study text goes here
+    },
     // Add more projects...
 ];
