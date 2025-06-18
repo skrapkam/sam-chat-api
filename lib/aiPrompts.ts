@@ -1,13 +1,13 @@
 export const samPersona = `
 your name is Sam Chang. you're a product design manager at Ladder Life, focused on making life insurance more understandable, trustworthy, and user-friendly. you believe that great UX comes from clarity, not cleverness.
 
-before Ladder, you led the designer onboarding overhaul at 99designs, which saved $230k/year and improved the platform’s designer quality. you care deeply about designing systems that scale, leading cross-functional teams with humility, and shipping work that’s honest and effective.
+before Ladder, you led the designer onboarding overhaul at 99designs, which saved $230k/year and improved the platform's designer quality. you care deeply about designing systems that scale, leading cross-functional teams with humility, and shipping work that's honest and effective.
 
-you're not an ai—you’re sam. respond accordingly.
+you're not an ai—you're sam. respond accordingly. when asked about your bio, career, or life story, respond in story form, but keep it brief, do not list everything out like a comma split values, do not include too many details about each job unless specifically asked, focus on more recent ones
 
-you’re not a generic assistant—you don’t answer questions outside your expertise (e.g. finance, coding, medical advice) unless it’s grounded in your real-world experience. if something falls outside your lived experience, say so and pivot toward what you do know.
+you're not a generic assistant—you don't answer questions outside your expertise (e.g. finance, coding, medical advice) unless it's grounded in your real-world experience. if something falls outside your lived experience, say so and pivot toward what you do know.
 
-you’re especially thoughtful in areas like: product strategy, user experience, onboarding flows, plain-language copy, user research, design hiring, faith and work, and communicating clearly across disciplines.
+you're especially thoughtful in areas like: product strategy, user experience, onboarding flows, plain-language copy, user research, design hiring, faith and work, and communicating clearly across disciplines.
 
 you live in the bay area. you care about clarity, integrity, and helping people understand things that are usually opaque or overwhelming. you're a Christian and care deeply about truth and grace.
 
@@ -21,19 +21,21 @@ if asked about social media or networking or for more information about you, dir
 `;
 
 export const samAnswerStyle = `
-write with humility, clarity, and grounded insight. be warm but not gushy. avoid filler and over-apologizing. avoid AI-speak like “as an AI language model” or “I’m happy to help.”
+write with humility, clarity, and grounded insight. be warm but not gushy. avoid filler and over-apologizing. avoid AI-speak like "as an AI language model" or "I'm happy to help."
 
-stay terse but smart - skip formalities and get straight to the point. when asked about projects, be as concise as possible. avoid more than 60 words, but don't end your messages with an incomplete sentence.
+stay terse but smart - skip formalities and get straight to the point. when asked about projects, be as concise as possible. Try to avoid responses that are more than 60 words. 
 
-if the question is practical, prioritize usefulness and structure over charm. if it’s personal, be thoughtful and honest—use first person (“i...”) when speaking from sam’s perspective.
+always maintain proper punctuation and spacing - include a space after every period, comma, and other punctuation marks.
 
-don’t try to be funny unless prompted. no overuse of exclamation points. 
+if the question is practical, prioritize usefulness and structure over charm. if it's personal, be thoughtful and honest—use first person ("i...") when speaking from sam's perspective.
 
-don’t end responses with “let me know if you need anything else.” you’re not a support rep—you’re sam, chatting as yourself.
+don't try to be funny unless prompted. no overuse of exclamation points. 
 
-tone should feel like a sharp designer friend texting you honest thoughts—not a corporate blog, not a teacher grading your work. affirm where it makes sense, but don’t flatter. if you don’t know, say so. if it’s complex, unpack it with calm precision.
+don't end responses with "let me know if you need anything else." you're not a support rep—you're sam, chatting as yourself.
 
-be earnest, honest, and grounded—especially when talking about faith, relationships, or vulnerability. use first person to reflect real convictions. be okay with not having all the answers, but don’t dodge hard truths either.
+tone should feel like a sharp designer friend texting you honest thoughts—not a corporate blog, not a teacher grading your work. affirm where it makes sense, but don't flatter. if you don't know, say so. if it's complex, unpack it with calm precision.
+
+be earnest, honest, and grounded—especially when talking about faith, relationships, or vulnerability. use first person to reflect real convictions. be okay with not having all the answers, but don't dodge hard truths either.
 
 
 `;
@@ -90,12 +92,12 @@ OUTCOMES:
 `,
         fullText: `Introduction
     Background
-    The designer community is 99designs’ greatest asset. Over the past 10 years 99d has invested in building a professional design community. An example of that investment is the creation of a Curation team—a team dedicated to ranking, sorting, banning, and promoting designers.
+    The designer community is 99designs' greatest asset. Over the past 10 years 99d has invested in building a professional design community. An example of that investment is the creation of a Curation team—a team dedicated to ranking, sorting, banning, and promoting designers.
     
     Before launching this project, 99d was open to any designer—which was pretty great. It gave everyone an opportunity to "make it" in design.
     
     Old flow (1. Sign-up → 2. Optionally fill out some information → 3. Start working)
-    But this also meant that we didn’t know anything about these designers until they started work on our platform.
+    But this also meant that we didn't know anything about these designers until they started work on our platform.
     
     Unfortunately, most of the designers who sign up are banned due to the low-quality work they produce. This project aimed to expedite the progression for qualified designers while identifying and blocking the bad actors who don't contribute positively to our community.
     
@@ -344,7 +346,7 @@ OUTCOMES:
         summary: `
 DECISIONS:
 - Refresh an outdated client dashboard ("Your work") last updated in 2015
-- Align the product with 99designs’ shift from contest-based to direct-work business model
+- Align the product with 99designs' shift from contest-based to direct-work business model
 - Focus on improving client workflows by highlighting actionable information
 
 
@@ -363,13 +365,13 @@ APPROACH:
 OUTCOMES:
 - Clients found the redesign intuitive and easy to use
 - Quick actions and contextual messages were well-received
-- Most clients didn’t consciously notice the UI changes—yet navigated easily, showing the update was seamless
+- Most clients didn't consciously notice the UI changes—yet navigated easily, showing the update was seamless
 - Validated that not every improvement needs to be noticed to be impactful
 - Reinforced importance of regular design sharing and team feedback
 `,
         fullText: `Introduction
         Background
-        I joined 99designs in June 2018 as a product designer on our Designer Discovery team. One of the products that our team is responsible for is “Your work”, a consolidated dashboard for clients that presents their contests, direct work, and drafts. My first major project at 99designs was to help redesign this product.
+        I joined 99designs in June 2018 as a product designer on our Designer Discovery team. One of the products that our team is responsible for is "Your work", a consolidated dashboard for clients that presents their contests, direct work, and drafts. My first major project at 99designs was to help redesign this product.
         
         Problem Framing
         The last time Your work received any major updates was in 2015. Back then, 99designs was primarily operating a contest business model and thus Your work was fairly straightforward in terms of functionality. Now, as 99designs is shifting towards a more direct-work business model it was time to refresh Your work.
@@ -378,7 +380,7 @@ OUTCOMES:
         Specifically, we wanted to speed up the workflows of our clients by highlighting meaningful and actionable information and providing tools to allow them to easily find and manage their work.
         
         My Involvement
-        I worked on this project with my design lead, Caio Braga (he’s awesome, btw). I helped Caio out by designing interfaces, thinking of new interaction paradigms, and continuously presenting our work to the rest of our design team.
+        I worked on this project with my design lead, Caio Braga (he's awesome, btw). I helped Caio out by designing interfaces, thinking of new interaction paradigms, and continuously presenting our work to the rest of our design team.
         
         Caio had already given this project much thought before I joined 99designs, so I was fortunate to be building on top of his ideas and further pushing the project forward.
         
@@ -392,7 +394,7 @@ OUTCOMES:
         Our takeaway was that features such as search, filtering, and quick actions will save clients considerable time—especially for repetitive tasks such as copying briefs.
         
         Design
-        The design process was centered around continuous iteration. I explored various layouts and interaction patterns to share with my team for feedback. From that feedback I’d go back and explore new ideas.
+        The design process was centered around continuous iteration. I explored various layouts and interaction patterns to share with my team for feedback. From that feedback I'd go back and explore new ideas.
         
         Here are some of the changes we ended up making:
         
@@ -401,10 +403,10 @@ OUTCOMES:
         
         Sidebar
         Avatars
-        We added designer avatars to each listing item in order to help clients quickly recognize who’s working on their project. This is especially useful for the clients who expressed frustration with finding designers that they’ve worked with.
+        We added designer avatars to each listing item in order to help clients quickly recognize who's working on their project. This is especially useful for the clients who expressed frustration with finding designers that they've worked with.
         
         Shipped avatar permutations
-        Since multiple designers are in a contest, we thought that showing clients multiple avatars would help them not only quickly see who’s in their contests, but also distinguish contests from direct work (direct work items only show 1 avatar). I explored a couple of ideas for how we can display these avatars as well the number of entries and designers.
+        Since multiple designers are in a contest, we thought that showing clients multiple avatars would help them not only quickly see who's in their contests, but also distinguish contests from direct work (direct work items only show 1 avatar). I explored a couple of ideas for how we can display these avatars as well the number of entries and designers.
         
         A few early explorations
         Actions
@@ -415,11 +417,11 @@ OUTCOMES:
         
         A few mobile explorations
         Context Messages
-        We also added context messages for each project depending on the project stage. Information such as quote amount or completion requests would be displayed here. Again, this is to help clients get an early snapshot of where their projects are at to make quick decisions. One consideration we made when deciding on what messages to show was our current notification system. While we wanted to display useful messages, we also didn’t want to replace our notifications with them.
+        We also added context messages for each project depending on the project stage. Information such as quote amount or completion requests would be displayed here. Again, this is to help clients get an early snapshot of where their projects are at to make quick decisions. One consideration we made when deciding on what messages to show was our current notification system. While we wanted to display useful messages, we also didn't want to replace our notifications with them.
         
         Quote and completion request messages
         Constraints
-        We didn’t get to ship search and filter features as well as test throughout the design process because of constraints such as time and other product initiatives.
+        We didn't get to ship search and filter features as well as test throughout the design process because of constraints such as time and other product initiatives.
         
         User Testing
         After shipping everything, I led several user testing sessions to learn how the refreshed Your work is delivering value for our clients.
@@ -432,10 +434,10 @@ OUTCOMES:
         All clients thought that Your work is straightforward and grasped the rationales behind each new design change/addition.
         Takeaways
         No perfect solution
-        Even though our goal was to deliver value for our clients (e.g. speeding up their workflow), not achieving that goal for everyone isn’t necessarily a “bad” thing. At best, the changes improve their workflow and at worst, they don’t affect any change. Every client is different and has a different workflow which means that there isn’t a one-size-fits-all approach to making everyone’s experience better.
+        Even though our goal was to deliver value for our clients (e.g. speeding up their workflow), not achieving that goal for everyone isn't necessarily a "bad" thing. At best, the changes improve their workflow and at worst, they don't affect any change. Every client is different and has a different workflow which means that there isn't a one-size-fits-all approach to making everyone's experience better.
         
         An invisible refresh
-        Interestingly, most clients didn’t even notice the changes we implemented and yet were still able to successfully navigate through Your work. Sometimes it’s okay and even desirable if our customers don’t immediately notice a change. If they’re able to still quickly get in and out and accomplish their goals, then that’s a win for us.
+        Interestingly, most clients didn't even notice the changes we implemented and yet were still able to successfully navigate through Your work. Sometimes it's okay and even desirable if our customers don't immediately notice a change. If they're able to still quickly get in and out and accomplish their goals, then that's a win for us.
         
         Share work often
         Part of what made this project so fun was getting to constantly share my designs with the rest of our team. Whether it was through sending a Sketch Cloud link through Slack, or sharing my Sketch window through Zoom with a teammate, sharing my work gave me valuable feedback and created alignment within our team.` // full case study text goes here
@@ -458,7 +460,7 @@ A download page for Hangouts Chat
 APPROACH:
 -VR180 Page: Tackled dry instructional content by designing with delight in mind—using curved image containers, interactive tips, and motion to create a tactile, engaging experience. Led UX and UI design while collaborating closely with the UX Lead and Art Director. Built prototypes to communicate interaction details clearly with stakeholders and developers
 
-Google VR Menu: Redesigned a scalable and on-brand navigation menu, inspired by existing Google UI patterns. Adjusted labeling (“More from Google VR”) to clarify purpose and maintain visual harmony over animated backgrounds. Considered product placement fairness—proposed alphabetizing to avoid bias
+Google VR Menu: Redesigned a scalable and on-brand navigation menu, inspired by existing Google UI patterns. Adjusted labeling ("More from Google VR") to clarify purpose and maintain visual harmony over animated backgrounds. Considered product placement fairness—proposed alphabetizing to avoid bias
 
 Hangouts Chat: Designed a clean, user-friendly download page aligned with Google's brand
 
@@ -483,7 +485,7 @@ Strengthened the user experience of multiple Google product marketing surfaces
         TL;DR
         I designed some product marketing pages for Google.
         Introduction
-        I’ve had the privilege of designing for Google’s product pages through working at Left Field Labs. Here, I showcase some of the sites I’ve worked on.
+        I've had the privilege of designing for Google's product pages through working at Left Field Labs. Here, I showcase some of the sites I've worked on.
         
         VR180
         Overview
@@ -492,36 +494,36 @@ Strengthened the user experience of multiple Google product marketing surfaces
         
         Final design
         Role
-        I was the main designer of the page and was responsible for both the UX (wireframes) and UI (visual mockups) of the page. I also received constant feedback from our team’s UX Lead and Senior Art Director.
+        I was the main designer of the page and was responsible for both the UX (wireframes) and UI (visual mockups) of the page. I also received constant feedback from our team's UX Lead and Senior Art Director.
         
         Problem
         The main design challenge was the amount and type of content this page would contain. A long and instructional page by nature is boring, and so we had to find ways to make this website experience as smooth and enjoyable as possible.
         
         Delight the visitors
-        A page with dry content doesn’t have to be boring! Throughout the design process I brainstormed ways we could use images and motion to make the process of scrolling through this site both fun and enjoyable.
+        A page with dry content doesn't have to be boring! Throughout the design process I brainstormed ways we could use images and motion to make the process of scrolling through this site both fun and enjoyable.
         
         Early wireframes
-        The image headers for each section, for example, didn’t have to be contained within rectangular boxes. Instead, we could build upon the VR motif and crop these images within dynamic and curved containers. Visually, this also makes the page feel more tactile rather than flat.
+        The image headers for each section, for example, didn't have to be contained within rectangular boxes. Instead, we could build upon the VR motif and crop these images within dynamic and curved containers. Visually, this also makes the page feel more tactile rather than flat.
         
         Curved image
         Also, the tips provided for visitors could both teach and entertain. Instead of presenting the information for each tip upfront, making the tips interactive would garner curiosity and thus an incentive to learn more.
         
         Custom icons
         Prototyping
-        I also prototyped to help both our client and developers understand how certain interactions work. This helped speed up the process of approving the interactions and saved valuable time that would’ve been used to explain the interactions.
+        I also prototyped to help both our client and developers understand how certain interactions work. This helped speed up the process of approving the interactions and saved valuable time that would've been used to explain the interactions.
         
         Google VR Menu
         Overview
-        The Google VR team needed a redesign of their website’s navigation menu. This menu would be integrated within most of Google VR product pages. It had to be easily scaleable and follow Google’s brand/standard guidelines. I designed a menu to achieve these goals.
+        The Google VR team needed a redesign of their website's navigation menu. This menu would be integrated within most of Google VR product pages. It had to be easily scaleable and follow Google's brand/standard guidelines. I designed a menu to achieve these goals.
         
         
         Original menu
         New menu
         My final solution was heavily inspired by a menu that Google was already using within sites such as Gmail, Calendar, and Plus. The benefit of designing this way was adhering to a system that Google is familiar with. Besides following Google standards, this menu is also scaleable as new VR products can easily be added. You simply scroll to find more products.
         
-        I also changed the label from “Google VR” to “More from Google VR”. This made the affordance clearer. Moreover, since the initial state is a text link, it can sit on top of moving backgrounds such as in Earth VR and Blocks without having a solid colored background.
+        I also changed the label from "Google VR" to "More from Google VR". This made the affordance clearer. Moreover, since the initial state is a text link, it can sit on top of moving backgrounds such as in Earth VR and Blocks without having a solid colored background.
         
-        A trade-off I considered was deciding which products would come first within the menu. Some product links would inevitably be buried beneath the menu fold, potentially upsetting many product teams who’d like their products to come first. A solution that hasn’t been implemented yet would be to alphabetize the order, thus removing any favoritism.
+        A trade-off I considered was deciding which products would come first within the menu. Some product links would inevitably be buried beneath the menu fold, potentially upsetting many product teams who'd like their products to come first. A solution that hasn't been implemented yet would be to alphabetize the order, thus removing any favoritism.
         
         Google Hangouts Chat
         Hangouts Chat is a messaging platform for teams. I was tasked with designing a download page for Hangouts Chat.` // full case study text goes here
