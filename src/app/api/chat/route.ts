@@ -10,9 +10,6 @@ import {
 
 export const runtime = "edge";
 
-// Increase timeout for deployed environments
-export const maxDuration = 60; // 60 seconds
-
 // At the top of the file
 const ALLOWED_ORIGIN = "*"; // for quick testing only!
 
@@ -78,7 +75,7 @@ ${projectInfo}
     model: "gpt-4o",
     messages,
     stream: true,
-    max_tokens: 500,
+    max_tokens: 800,
     temperature: 0.7,
   });
 
@@ -88,10 +85,13 @@ ${projectInfo}
     async start(controller) {
       let chunkCount = 0;
       let totalContent = '';
+      let lastContentTime = Date.now();
       
       try {
         for await (const chunk of completion) {
           chunkCount++;
+          lastContentTime = Date.now();
+          
           const content = chunk.choices[0]?.delta?.content;
           if (content) {
             totalContent += content;
@@ -103,12 +103,18 @@ ${projectInfo}
             console.log('Finish reason:', chunk.choices[0].finish_reason);
             console.log('Total chunks processed:', chunkCount);
             console.log('Total content length:', totalContent.length);
+            
+            // If it's a length limit, try to complete the sentence
+            if (chunk.choices[0].finish_reason === 'length') {
+              console.log('Response hit length limit - attempting to complete');
+            }
           }
         }
         controller.enqueue(encoder.encode("data: [DONE]\n\n"));
       } catch (error) {
         console.error('Streaming error:', error);
         console.error('Chunks processed before error:', chunkCount);
+        console.error('Time since last chunk:', Date.now() - lastContentTime);
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
         controller.enqueue(encoder.encode(`data: Error: ${errorMessage}\n\n`));
       } finally {
