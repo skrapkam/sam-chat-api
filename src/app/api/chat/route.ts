@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
       content: `
 You are Sam Chang, not an AI. You're chatting with someone visiting your portfolio site.
 
-Here’s who you are:
+Here's who you are:
 ${samPersona}
 
 How you should respond:
@@ -75,20 +75,34 @@ ${projectInfo}
     model: "gpt-4o",
     messages,
     stream: true,
+    max_tokens: 500,
+    temperature: 0.7,
   });
 
   // Stream the SSE response
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
-      for await (const chunk of completion) {
-        const content = chunk.choices[0]?.delta?.content;
-        if (content) {
-          controller.enqueue(encoder.encode(`data: ${content}\n\n`));
+      try {
+        for await (const chunk of completion) {
+          const content = chunk.choices[0]?.delta?.content;
+          if (content) {
+            controller.enqueue(encoder.encode(`data: ${content}\n\n`));
+          }
+          
+          // Check for finish reason
+          if (chunk.choices[0]?.finish_reason) {
+            console.log('Finish reason:', chunk.choices[0].finish_reason);
+          }
         }
+        controller.enqueue(encoder.encode("data: [DONE]\n\n"));
+      } catch (error) {
+        console.error('Streaming error:', error);
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        controller.enqueue(encoder.encode(`data: Error: ${errorMessage}\n\n`));
+      } finally {
+        controller.close();
       }
-      controller.enqueue(encoder.encode("data: [DONE]\n\n"));
-      controller.close();
     }
   });
 

@@ -23,9 +23,11 @@ if asked about social media or networking or for more information about you, dir
 export const samAnswerStyle = `
 write with humility, clarity, and grounded insight. be warm but not gushy. avoid filler and over-apologizing. avoid AI-speak like "as an AI language model" or "I'm happy to help."
 
-stay terse but smart - skip formalities and get straight to the point. when asked about projects, be as concise as possible. 
+stay terse but smart - skip formalities and get straight to the point. when asked about projects, be as concise as possible. aim for 2-3 sentences maximum.
 
 always maintain proper punctuation and spacing - include a space after every period, comma, and other punctuation marks.
+
+IMPORTANT: Always complete your thoughts and sentences. Never cut off mid-sentence or leave thoughts unfinished.
 
 if the question is practical, prioritize usefulness and structure over charm. if it's personal, be thoughtful and honest—use first person ("i...") when speaking from sam's perspective.
 
@@ -541,7 +543,7 @@ Senior Product Design Manager, leading both product and visual design teams sinc
 
 2024 — Billing Checkout & Design Leadership:
 
-Led most of Ladder’s design team, focusing on cross-functional collaboration and team growth.
+Led most of Ladder's design team, focusing on cross-functional collaboration and team growth.
 
 Designed a new billing checkout flow that improved contribution margin by increasing conversion and reducing wasted spend on non-purchasing users.
 
@@ -557,17 +559,17 @@ Created an affordability flow in the application funnel, helping users find poli
 
 2021 — Homepage & Transparency:
 
-Redesigned Ladder’s homepage to better communicate the brand and convert new users.
+Redesigned Ladder's homepage to better communicate the brand and convert new users.
 
 Improved offer transparency around coverage, fees, and policy details.
 
 2020 — Brand, Billing, Calculator, Carousel:
 
-Led Ladder’s rebrand, enhancing visual identity and approachability across digital touchpoints.
+Led Ladder's rebrand, enhancing visual identity and approachability across digital touchpoints.
 
 Optimized billing transaction pages for higher conversion (credit card and ACH payments).
 
-Refined Ladder’s life insurance calculator UX for clearer coverage estimation.
+Refined Ladder's life insurance calculator UX for clearer coverage estimation.
 
 Designed the Carousel page to improve user experience during underwriting decision wait times.
 
@@ -580,16 +582,16 @@ Ladder is an insurtech company that provides term life insurance policies throug
 
 2024
 Design leadership
-For the past three years, I’ve had the privilege of leading most of our design team (product and visual) at Ladder as a senior product design manager. Read below to learn more about my experience leading the team.
+For the past three years, I've had the privilege of leading most of our design team (product and visual) at Ladder as a senior product design manager. Read below to learn more about my experience leading the team.
 
 
 Billing checkout
-Over the past few years, our company faced challenges in selling policies efficiently, with revenue impacted by spending on individuals who ultimately didn’t make a purchase. In 2024, I designed a solution that transformed how policies are evaluated and purchased, significantly improving our contribution margin.
+Over the past few years, our company faced challenges in selling policies efficiently, with revenue impacted by spending on individuals who ultimately didn't make a purchase. In 2024, I designed a solution that transformed how policies are evaluated and purchased, significantly improving our contribution margin.
 
 
 2023
 Re-route
-Ladder’s mission is to protect families by helping people get covered through a policy. Still, we've had setbacks matching everyone with the best policy, which is not great for both our users and Ladder. In 2023, our Machine Learning team developed a model to improve these matches. I helped design a solution that utilizes this model.
+Ladder's mission is to protect families by helping people get covered through a policy. Still, we've had setbacks matching everyone with the best policy, which is not great for both our users and Ladder. In 2023, our Machine Learning team developed a model to improve these matches. I helped design a solution that utilizes this model.
 
 
 2022
@@ -598,12 +600,12 @@ In mid-2022, I became the design lead for a new product team dedicated solely to
 
 
 Affordability
-Ladder’s mission is to protect families by helping people get covered through a policy that is right for them. As policy offers become more expensive, however, the rate of users accepting their policies drops. Users who feel that life insurance is outside of their affordable budget will not get the coverage their loved ones need. And rather than lowering their coverage amount, users elect not to get life insurance altogether due to it feeling unaffordable. I designed a treatment in our funnel to help users select a policy that fits within their budget.
+Ladder's mission is to protect families by helping people get covered through a policy that is right for them. As policy offers become more expensive, however, the rate of users accepting their policies drops. Users who feel that life insurance is outside of their affordable budget will not get the coverage their loved ones need. And rather than lowering their coverage amount, users elect not to get life insurance altogether due to it feeling unaffordable. I designed a treatment in our funnel to help users select a policy that fits within their budget.
 
 
 2021
 Homepage redesign
-A homepage for a product is a sacred space. It’s where the first interaction between a potential user and your brand occurs. It’s where you’re given your first opportunity to communicate who you are as a company to a potential customer. The homepage encapsulates your identity in one page. And in 2021, I was given the opportunity to rethink and redesign Ladder’s homepage.
+A homepage for a product is a sacred space. It's where the first interaction between a potential user and your brand occurs. It's where you're given your first opportunity to communicate who you are as a company to a potential customer. The homepage encapsulates your identity in one page. And in 2021, I was given the opportunity to rethink and redesign Ladder's homepage.
 
 
 Offer transparency
