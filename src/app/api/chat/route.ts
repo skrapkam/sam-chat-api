@@ -12,7 +12,7 @@ import { ratelimit, getClientIdentifier } from "../../../../lib/rateLimiter";
 export const runtime = "edge";
 
 // At the top of the file
-const ALLOWED_ORIGIN = "*"; // for quick testing only!
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "*";
 
 export async function OPTIONS() {
   return new Response(null, {
