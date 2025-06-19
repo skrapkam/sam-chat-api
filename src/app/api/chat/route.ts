@@ -10,6 +10,9 @@ import {
 
 export const runtime = "edge";
 
+// Increase timeout for deployed environments
+export const maxDuration = 60; // 60 seconds
+
 // At the top of the file
 const ALLOWED_ORIGIN = "*"; // for quick testing only!
 
@@ -83,21 +86,29 @@ ${projectInfo}
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
+      let chunkCount = 0;
+      let totalContent = '';
+      
       try {
         for await (const chunk of completion) {
+          chunkCount++;
           const content = chunk.choices[0]?.delta?.content;
           if (content) {
+            totalContent += content;
             controller.enqueue(encoder.encode(`data: ${content}\n\n`));
           }
           
           // Check for finish reason
           if (chunk.choices[0]?.finish_reason) {
             console.log('Finish reason:', chunk.choices[0].finish_reason);
+            console.log('Total chunks processed:', chunkCount);
+            console.log('Total content length:', totalContent.length);
           }
         }
         controller.enqueue(encoder.encode("data: [DONE]\n\n"));
       } catch (error) {
         console.error('Streaming error:', error);
+        console.error('Chunks processed before error:', chunkCount);
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
         controller.enqueue(encoder.encode(`data: Error: ${errorMessage}\n\n`));
       } finally {
