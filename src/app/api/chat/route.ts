@@ -7,6 +7,7 @@ import {
   samFunFacts,
   projectSummaries,
 } from "../../../../lib/aiPrompts"; // Adjust as needed
+import { ratelimit, getClientIdentifier } from "../../../../lib/rateLimiter";
 
 export const runtime = "edge";
 
@@ -28,6 +29,34 @@ export async function OPTIONS() {
 // 2. Handle POST/chat streaming
 export async function POST(req: NextRequest) {
   const { userMessage } = await req.json();
+
+  // Allow authenticated users to bypass rate limiting if they provide a valid token
+  const bypassHeader =
+    req.headers.get("x-bypass-token") ??
+    req.headers.get("authorization")?.replace(/Bearer\s+/i, "");
+  const bypassSecret = process.env.RATE_LIMIT_BYPASS_TOKEN;
+  const isBypass = bypassSecret && bypassHeader === bypassSecret;
+
+  // Rate limiting: max 30 messages per 24-hour window per IP (unless bypassed)
+  if (!isBypass) {
+    const identifier = getClientIdentifier(req);
+    const rateLimitResult = await ratelimit.limit(identifier);
+    if (!rateLimitResult.success) {
+      return new Response(
+        JSON.stringify({ error: "Rate limit exceeded. Please try again tomorrow." }),
+        {
+          status: 429,
+          headers: {
+            "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+            "Content-Type": "application/json",
+            "X-RateLimit-Limit": rateLimitResult.limit.toString(),
+            "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
+            "X-RateLimit-Reset": rateLimitResult.reset.toString(),
+          },
+        }
+      );
+    }
+  }
 
   // Compose prompt
   const projectInfo = projectSummaries
