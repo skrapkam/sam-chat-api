@@ -165,7 +165,7 @@ ${userContextInfo}
   });
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o",
+    model: "gpt-4o-mini",
     messages,
     stream: true,
     max_tokens: 800,
