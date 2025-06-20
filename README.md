@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sam Chat API
 
-## Getting Started
+A conversational AI API that simulates chatting with Sam Chang, with built-in conversation memory and context awareness.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Conversation Memory**: GPT remembers who it's chatting with, including names, locations, and conversation topics
+- **Session Management**: Persistent conversations across multiple requests using Redis
+- **Context Awareness**: Automatically extracts and remembers user information from messages
+- **Rate Limiting**: Built-in rate limiting with bypass options for authenticated users
+- **Streaming Responses**: Real-time streaming chat responses
+- **Edge Runtime**: Optimized for Vercel Edge Runtime
+
+## How It Works
+
+### Conversation Memory
+
+The API now maintains conversation context using Redis storage. Each conversation session includes:
+
+- **Message History**: Last 10 messages for context
+- **User Information**: Automatically extracted from messages:
+  - Name (e.g., "my name is John", "I'm Sarah")
+  - Location (e.g., "I'm from San Francisco", "I live in NYC")
+  - Last Topic Discussed (based on keywords in messages)
+
+### Session Management
+
+- Sessions are identified by unique session IDs
+- Sessions persist for 24 hours
+- Clients should send the same `sessionId` in subsequent requests to maintain conversation continuity
+
+## API Usage
+
+### POST /api/chat
+
+**Request Body:**
+```json
+{
+  "userMessage": "Hi, my name is John and I'm from San Francisco",
+  "sessionId": "optional-session-id"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Response Headers:**
+- `X-Session-Id`: The session ID for this conversation (use in future requests)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Response:** Server-Sent Events (SSE) stream
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Example Client Usage
 
-## Learn More
+```javascript
+const response = await fetch('/api/chat', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    userMessage: 'Hi, my name is John',
+    sessionId: 'your-session-id' // Optional, will be generated if not provided
+  }),
+});
 
-To learn more about Next.js, take a look at the following resources:
+// Handle streaming response
+const reader = response.body.getReader();
+const decoder = new TextDecoder();
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+while (true) {
+  const { done, value } = await reader.read();
+  if (done) break;
+  
+  const chunk = decoder.decode(value);
+  const lines = chunk.split('\n');
+  
+  for (const line of lines) {
+    if (line.startsWith('data: ')) {
+      const content = line.slice(6);
+      if (content === '[DONE]') break;
+      console.log(content); // Handle streaming content
+    }
+  }
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment Variables
 
-## Deploy on Vercel
+Required environment variables:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+OPENAI_API_KEY=your_openai_api_key
+UPSTASH_REDIS_REST_URL=your_redis_url
+UPSTASH_REDIS_REST_TOKEN=your_redis_token
+RATE_LIMIT_BYPASS_TOKEN=optional_bypass_token
+ALLOWED_ORIGIN=* # or specific origin
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Set up environment variables (see above)
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Visit `http://localhost:3000` to see the chat interface
+
+## Conversation Memory Examples
+
+### Example 1: Name and Location
+```
+User: "Hi, my name is Sarah and I'm from Seattle"
+Sam: "Hey Sarah! Seattle's a great city. What brings you to my site today?"
+
+User: "Tell me about your design work"
+Sam: "Sure thing, Sarah! I'm currently leading design at Ladder Life..."
+```
+
+### Example 2: Topic Memory
+```
+User: "What's it like working at Ladder?"
+Sam: "It's been really rewarding! I've been there since 2020..."
+
+User: "That sounds interesting"
+Sam: "Yeah, it's been a great journey. Since we were just talking about Ladder..."
+```
+
+## Rate Limiting
+
+- Default: 30 messages per 24-hour window per IP
+- Bypass: Use `x-bypass-token` or `authorization` header with `RATE_LIMIT_BYPASS_TOKEN`
+
+## Architecture
+
+- **Backend**: Next.js API Routes with Edge Runtime
+- **Storage**: Upstash Redis for conversation memory
+- **AI**: OpenAI GPT-4 for responses
+- **Rate Limiting**: Upstash Rate Limiter
+- **Frontend**: React with Tailwind CSS (example included)

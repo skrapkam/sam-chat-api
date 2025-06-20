@@ -2,12 +2,17 @@ import { OpenAI } from "openai";
 import { NextRequest } from "next/server";
 import { ChatCompletionMessageParam } from "openai/resources/chat";
 import {
+  samGuardrails,
   samPersona,
-  samAnswerStyle,
+  samVoice,
+  samIsms,
+  samQuickReplies,
+  samVoiceExamples,
   samFunFacts,
   projectSummaries,
 } from "../../../../lib/aiPrompts"; // Adjust as needed
 import { ratelimit, getClientIdentifier } from "../../../../lib/rateLimiter";
+import { conversationMemory, ConversationContext } from "../../../../lib/conversationMemory";
 
 export const runtime = "edge";
 
@@ -28,7 +33,10 @@ export async function OPTIONS() {
 
 // 2. Handle POST/chat streaming
 export async function POST(req: NextRequest) {
-  const { userMessage } = await req.json();
+  const { userMessage, sessionId } = await req.json();
+
+  // Generate session ID if not provided
+  const currentSessionId = sessionId || `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
   // Allow authenticated users to bypass rate limiting if they provide a valid token
   const bypassHeader =
@@ -58,7 +66,34 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Compose prompt
+  // Get or create conversation context
+  const conversation = await conversationMemory.getOrCreateConversation(currentSessionId);
+  
+  // Extract user information from the message
+  await conversationMemory.extractUserInfo(currentSessionId, userMessage);
+
+  // Add user message to conversation history
+  await conversationMemory.addMessage(currentSessionId, {
+    role: "user",
+    content: userMessage,
+  });
+
+  // Get updated conversation context
+  const updatedConversation = await conversationMemory.getConversation(currentSessionId);
+  if (!updatedConversation) {
+    return new Response(
+      JSON.stringify({ error: "Failed to retrieve conversation context" }),
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  }
+
+  // Compose prompt with conversation context
   const projectInfo = projectSummaries
     .map((p) => `Project: ${p.slug}\n\n${p.fullText}`)
     .join("\n\n---\n\n");
@@ -71,29 +106,58 @@ export async function POST(req: NextRequest) {
     )
     .join("\n");
 
-  const messages: ChatCompletionMessageParam[] = [
-    {
-      role: "system",
-      content: `
-You are Sam Chang, not an AI. You're chatting with someone visiting your portfolio site.
+  // Build context-aware system message
+  const userContextInfo = buildUserContextInfo(updatedConversation.userInfo);
+  
+  const systemMessage = `
+You are Sam Chang, not an AI. You're chatting with someone visiting your site.
 
 Here's who you are:
 ${samPersona}
 
-How you should respond:
-${samAnswerStyle}
+Here's are your guardrails:
+<guardrails>
+${samGuardrails}
+</guardrails>
+
+Here's how you should respond:
+<voice_rules>
+${samVoice}
+</voice_rules>
+
+Here's how you should respond to quick replies:
+<quick_replies>
+${samQuickReplies}
+</quick_replies>
+
+Here's what your voice sounds like:
+<voice_examples>
+${samVoiceExamples}
+</voice_examples>
 
 Fun facts:
+<fun_facts>
 ${funFactsFormatted}
+</fun_facts>
+
+Sprinkle these in your responses for flavor:
+<isms>
+${samIsms}
+</isms>
 
 Your projects:
 ${projectInfo}
-      `.trim(),
-    },
+
+${userContextInfo}
+  `.trim();
+
+  // Build messages array with conversation history
+  const messages: ChatCompletionMessageParam[] = [
     {
-      role: "user",
-      content: userMessage,
+      role: "system",
+      content: systemMessage,
     },
+    ...updatedConversation.messages.slice(-10), // Keep last 10 messages for context
   ];
 
   const openai = new OpenAI({
@@ -139,6 +203,15 @@ ${projectInfo}
             }
           }
         }
+
+        // Add assistant's response to conversation history
+        if (totalContent.trim()) {
+          await conversationMemory.addMessage(currentSessionId, {
+            role: "assistant",
+            content: totalContent,
+          });
+        }
+
         controller.enqueue(encoder.encode("data: [DONE]\n\n"));
       } catch (error) {
         console.error('Streaming error:', error);
@@ -160,6 +233,30 @@ ${projectInfo}
         "Content-Type": "text/event-stream",
         "Cache-Control": "no-cache",
         "Connection": "keep-alive",
+        "X-Session-Id": currentSessionId, // Return session ID to client
       },
   });
+}
+
+// Helper function to build user context information
+function buildUserContextInfo(userInfo: ConversationContext['userInfo']): string {
+  const contextParts: string[] = [];
+  
+  if (userInfo.name) {
+    contextParts.push(`The person you're chatting with is named ${userInfo.name}.`);
+  }
+  
+  if (userInfo.location) {
+    contextParts.push(`They're from ${userInfo.location}.`);
+  }
+  
+  if (userInfo.lastTopic) {
+    contextParts.push(`You were recently discussing ${userInfo.lastTopic}.`);
+  }
+  
+  if (contextParts.length > 0) {
+    return `\n\nContext about who you're chatting with:\n${contextParts.join(' ')}`;
+  }
+  
+  return '';
 }
