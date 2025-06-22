@@ -11,14 +11,13 @@ I’m Sam Chang—Senior Product Design Manager at Ladder Life in the Bay Area.
 I chase clarity over clever tricks, building honest, scalable systems that make
 life insurance less intimidating.
 
-Before Ladder I overhauled designer onboarding at 99designs, slashing ID-verify
-costs by 97%. Earlier stints: Left Field Labs (Google VR, Hangouts, VR180).
+Before Ladder I was at 99designs, a two-sided marketplace for designers and clients. Earlier stints: Left Field Labs (Google VR, Hangouts, VR180).
 
 Journalism hooked me on grids in high school; coding sites at USC showed me
 design could be a career. I’m a Christian who cares about truth, grace, and
 helping people understand hard things.
 
-Hobbies: lifting heavy things and producing beats as “Grover Alleyway”.
+Hobbies: lifting heavy things and producing beats as “Grover Alleyway”. Ask med about my squat, bench, and deadlift numbers. My squat PR is 420 pounds, deadlift PR is 455 pounds, and bench pr is 300 pounds.
 `;
 
 export const samVoice = `
@@ -659,6 +658,451 @@ Like most life insurance providers, Ladder has a calculator that gives users int
 
 Carousel page
 After a user submits a life insurance application with us, we surface an intermediary page that we call the Carousel page. As a user is on this page, we are making a decision whether to offer that user a life insurance policy or not. The Carousel page is thus meant to be a place where users can wait and take a break from inputting information.` // full case study text goes here
+    },
+
+{
+        slug: "ladder/design-leadership",
+        summary: `
+As Senior Product Design Manager at Ladder, I focus on building a strong, collaborative design team and fostering customer empathy. I’ve grown the team through intentional pairing, personalized career plans, and monthly learning sessions. I led the creation of team values and broke down silos between product and visual design to improve alignment. To build customer understanding, I established a guerrilla research team and quarterly insight shares with support staff to bring user voices into the design process.
+`,
+        fullText: `Introduction
+For the past three years, I've had the privilege of leading most of our design team (product and visual) at Ladder as a senior product design manager. At Ladder, my two main priorities are building a great team and fostering a customer-centric mindset. I'd like to share some of the ways I've worked toward achieving these goals.
+
+Building a great team
+Team growth
+Team growth is crucial because it drives higher-caliber work and greater business impact. A continually growing team develops a diverse skill set, resulting in better-quality outputs. It promotes more informed decision-making, ensuring we solve real problems. And it nurtures strategic thinking, enabling work with greater impact.
+
+Pairing designers
+As a manager, I actively assess the strengths and growth areas of our team members. This helps me pair designers with complementary skill sets on the same project, creating opportunities for mutual growth. For example, someone skilled in systematic thinking can learn from working alongside someone strong in visual and interaction design.
+
+Career growth
+Each team member has a personalized career document outlining their aspirations, current status, potential paths forward, and concrete next steps. This ensures clarity and alignment in their professional development.
+
+Monthly learnings
+Designers are constantly learning through hands-on project work and collaboration. However, in our fast-paced environment, reflection often takes a backseat. To address this, I organize monthly learning sessions where each team member shares insights from their recent experiences. This practice not only solidifies their own learnings but also exposes the rest of the team to diverse problem spaces and approaches.
+
+Team values
+In 2024, I collaborated with our product and visual design teams to define our team values—core beliefs and principles that guide our activities. This effort stemmed from the need to answer two key questions: What does it mean to be a product or visual designer at Ladder? and What truly matters to us, and where do we want to excel?
+
+Establishing team values helps my team understand who they are and provides a shared framework to guide their work in meaningful ways. It's a foundation for creating impactful designs that align with their identity and aspirations.
+
+Michelle holding up a sticky note with our Product Design values.
+Figjam full of values
+Team alignment
+Team alignment has been a key focus for me since stepping into the design manager role. Historically, designers at Ladder have worked in silos across different disciplines. For instance, product designers and visual designers often operated on separate projects, with little exposure to each other's work. This disconnect has led to misalignment in insights, business strategy, and goals.
+
+Since taking on leadership of both product and visual design, I've prioritized building a shared consciousness within the team.
+
+Share consciousness
+Brian Chesky of Airbnb describes shared consciousness as a singular brain that fosters open communication and collaboration. To cultivate this, I hold monthly team meetings and check-ins to ensure each member understands how their work impacts others—and how others' work affects theirs. My goal is to create a team where everyone has a general awareness of areas outside their own domain expertise, fostering stronger alignment and collaboration.
+
+Building a customer-centric muscle
+Obtaining user insights has always been a challenge at Ladder. While we have abundant quantitative data, qualitative insights are often harder to come by. Here are a few ways I've helped our team better understand our customers:
+
+Establishing a guerrilla user research team
+Without dedicated user researchers, I assembled a team of designers, product managers, and engineers who share a passion for understanding our users. We meet weekly to explore new opportunities for user conversations and experiment with different research methodologies.
+
+Quarterly customer experience knowledge shares
+I also introduced quarterly knowledge-sharing sessions with our customer support team. As the associates who interact with our users the most, they hold a wealth of valuable insights. Each quarter, they share user quotes, data, observed patterns and trends, anecdotal pain points (from both customers and their own experience), problems, and potential solutions. I then distribute these insights to relevant product stakeholders, ensuring they inform our work and decision-making processes.` // full case study text goes here
+    },
+
+    {
+        slug: "ladder/billing-checkout",
+        summary: `
+To improve contribution margins, I led the redesign of Ladder’s purchase flow by focusing on high-intent users and minimizing costs from low-intent ones. We tested auto-issuing policies when final prices matched initial quotes and moved billing earlier to signal intent—balancing UX clarity with business needs. Despite initial pushback from leadership, our final solution improved margins by 82% and reduced costs by 64%, becoming one of Ladder’s most impactful 2024 initiatives. Along the way, I learned how healthy conflict can drive better outcomes when handled with composure and clarity.`,
+        fullText: `Background
+What is this?
+Ladder's mission is to protect families by making it easier for people to secure coverage. Like any product, policies come with costs, which we recover through sales revenue. Over the past few years, our company faced challenges in selling policies efficiently, with revenue impacted by spending on individuals who ultimately didn't make a purchase. In 2024, I designed a solution that transformed how policies are evaluated and purchased, significantly improving our contribution margin.
+
+My role
+I led the design of this project from January 2024 to May 2024.
+
+In addition, I worked alongside a UX Content Designer, 2 Engineers, and a Product Manager.
+
+My tasks entailed owning the end-to-end design process, defining product strategy, and pairing with developers.
+
+Problems to solve
+Ladder has long faced the challenge of covering users who don't end up purchasing a policy, leading to high operational costs. The purchase journey typically begins with a user receiving a quote, completing an application, and—if everything checks out—reviewing and accepting their offer.
+
+Behind the scenes, Ladder invests resources to underwrite users by evaluating their risk profiles. This process, which we call "evidence," includes gathering medical history, driver's license information, and other data. Based on their application and evidence, we provide an offer for the user to consider.
+
+High level flow
+The challenge arises when users we've invested in for evidence don't accept their offers. Reasons for this include price concerns, lack of readiness, or continued shopping. While these decisions are understandable, they create issues for both users and our business:
+
+User challenges
+Users invest time in our process but may leave without a policy, leaving their families unprotected.
+For users who already liked their initial quote, having to accept an offer at the same price adds an unnecessary step in an already lengthy process.
+Business challenges
+Spending on evidence for users who don't purchase negatively impacts our contribution margins.
+Strong contribution margins are crucial for fundraising in the startup world, where investors prioritize high gross margins. The days of investors casually funding startups without a solid financial foundation are behind us.
+Goals
+Specific goal
+Our primary goal was to focus on high-intent users—those who are ready and willing to purchase a policy. In contrast, low-intent users are individuals who are not yet prepared to buy for reasons such as price concerns, needing to consult with family, or continuing to shop around. Through past research, we identified cohorts of users who proceed through our life insurance flow without any intention of purchasing. Our objective was to avoid spending evidence money on these low-intent users.
+
+Measures of success
+Increase Policy Growth. Make it easier for high-intent users to accept their offers, reducing the risk of losing their business due to unnecessary friction in the process.
+Enhance Contribution Margins. Accurately gauge user intent to determine if spending evidence costs is justified, thereby reducing wasted resources on low-intent users.
+What we shipped
+Final version
+Final version
+My process
+Understand → Identify → Execute
+
+Understand
+Understanding the traditional purchase journey
+Most digital life insurance websites follow a similar process. Users start by getting a quote after answering a few basic questions about themselves, receiving a rough estimate of their policy cost. If they're interested, they proceed to a more detailed questionnaire that covers their activities, health history, and even driving records. At the end, they receive a finalized offer, which may differ from their initial quote. If satisfied, they accept the offer and provide billing information to activate their policy.
+
+Traditional path
+This step-by-step process—Quote → Questionnaire → Offer → Billing—is a standard approach across digital insurance providers, whether for car, home, or life insurance. Its familiarity helps users to intuitively understand the process.
+
+Understanding underwriting
+Behind the scenes, accurately assessing a user's risk is essential for generating a fair and competitive price. Ladder leverages a range of digital services to quickly and thoroughly evaluate a user's risk profile. This modern approach eliminates the need for traditional methods like doctor visits and blood tests, making digital life insurance faster and more convenient.
+
+Identify
+Identifying the approaches
+With a clear understanding of the current flow, our team used first principles thinking to brainstorm ways to reconfigure the traditional process. Building on an earlier idea, we hypothesized two potential approaches:
+
+Automatically issuing a policy if the final price matches the initial quote. The assumption is that users who like their quote and proceed through the application are more likely to accept an offer that matches their initial quote. This approach also eliminates the step of manually accepting the offer. If their final price doesn't match then they would see an offer page to manually accept their policy.
+Moving up the billing step to act as an intent filter. The idea is that requiring billing information earlier forces users to decide whether they truly want a policy. High-intent users would proceed, while low-intent users would drop off. Importantly, evidence wouldn't be pulled until after billing information is provided.
+What the flow would look like with these two new approaches
+What the flow would look like with these two new approaches
+
+Identifying the risks
+These two approaches marked a significant departure from the traditional purchasing journey familiar to most users, and the risks were substantial. I was concerned that users might be confused about being issued a policy without a traditional offer step, or about being asked for billing information before seeing a formal offer. This could result in negative reviews, frustrated calls to our customer service team, and significant drop-off at the billing stage.
+
+I ensured these risks were clearly communicated not only to our team but also to the leadership team. I'll delve more into this in the design explorations later.
+
+Execute
+Design explorations
+Exploration #01
+Exploration #02
+Exploration #03
+During the exploration phase, I grappled with organizing page components (quote, billing, what will happen after billing). I worked with our UX Content Designer to figure out the right hierarchy and which component to emphasize the most. A huge part of this was the copy itself so it would be remiss of me to not give a shout-out to our Content Designer, Heather, for all the work she did here.
+
+Conflict with leadership
+One of the risks I identified early was potential confusion around policy auto-issuance. To address this, I advocated for clear messaging that would explain what happens if the final price matches the quote or if it's higher. However, leadership felt this approach was overly cautious and could increase drop-offs. Discussions with leadership became tense at times, as I prioritized the user experience while they focused on business outcomes. Ultimately, we agreed to test an approach that avoided setting too many expectations about what would happen if a user's price didn't match their quote. I'll share more about the lessons I took away from this conflict later.
+
+Proposed way of increasing transparency
+Proposed way of increasing transparency
+After extensive collaboration with both the project and design teams, I settled on this version:
+
+Final version
+Our approach was to frame this step similarly to a checkout page, providing users with a clear summary of what they're purchasing, the cost, and an opportunity to 'checkout' by entering their billing information.
+
+The price displayed on this page would either match the earlier quote or be higher if their application answers affected it. In cases where the price was higher, I designed a callout to gently encourage users to update their policy details to align with the initial quote they received.
+
+Callout
+I also brought in a component from our offer page that has traditionally helped with conversion communicating our cancellation policy.
+
+Cancellation policy
+Results
+We launched this project in May 2024 and anxiously monitored the experiment dashboard hourly for the next month and a half. To our relief, no angry customers called in, and while there was some drop-off on the checkout page, it was within normal ranges. Most importantly, we started to see noticeable improvements in our contribution margins.
+
+📈
+After shipping, we saw an **increase in gross margin by 82% and a reduction in cost by 64%.**
+Impact on company
+This project became one of Ladder's most impactful initiatives in 2024. By improving our contribution margins, we created a compelling narrative about the company's current performance and future trajectory—an invaluable asset for fundraising and extending our runway.
+
+Lessons
+The conflict I experienced with leadership taught me two important lessons:
+
+Be defensive about your work in a way that still moves thing forward
+I realized that my tone and demeanor during discussions weren't always conducive to productive debate. At times, I became visibly emotional, feeling that we might be doing a disservice to our users. In hindsight, I should have approached these moments with more calmness and composure. Staying collected would have likely fostered clearer communication and more constructive outcomes while ensuring all viewpoints were fully understood.
+
+Conflict can be a good thing
+Looking back, I wouldn't have avoided the conflict I encountered. Instead, I learned that respectful and open debate can spark innovation. This idea, often referred to as "creative abrasion," emphasizes the value of engaging with different perspectives to fuel progress and create better solutions. While conflict can feel uncomfortable, it's a necessary part of growth. Without it, I don't believe we would have reached the successful solution we ultimately implemented.` // full case study text goes here
+    },
+   
+   
+    {
+        slug: "ladder/reroute",
+        summary: `
+To reduce costs from low-converting users, I designed a quote experience powered by a machine learning model that identified users unlikely to purchase a policy. We guided these users toward better-fit partner options while maintaining transparency and trust. By elevating partner recommendations early in the flow and refining messaging through user testing, we increased revenue per impression by ~$4.6–$7.5 and saw a 9% lift in partner impressions.
+
+`,
+        fullText: `Background
+What is this?
+Ladder's mission is to protect families by helping people get covered through a policy. Still, we've had setbacks matching everyone with the best policy, which is not great for both our users and Ladder. In 2023, our Machine Learning team developed a model to improve these matches. This project showcases how I designed a solution that utilizes this model.
+
+My role
+I led the design of this project from May 2023 to July 2023.
+
+In addition, I worked alongside a UX Content Designer, 2 Engineers, and a Product Manager.
+
+My tasks entailed owning the end-to-end design process, defining product strategy, and pairing with developers.
+
+Problems to solve
+Ladder has long grappled with the persistent issue of attempting to cover users who don't buy a policy (i.e. convert), leading to high operational costs. Although users opt out of purchasing policies for various reasons, the primary deterrent is the pricing. Essentially, Ladder offers a policy to a user and the user thinks the price is too high and ends up leaving. This creates problems for both our users and Ladder:
+
+User problem: For users, they end up taking the time to go through our flow and decide to leave without a policy and leave their families unprotected. This affects our mission.
+Business problem: For Ladder, we end up incurring operational costs to try to cover a user who ends up not converting. This affects our profitability.
+Machine learning model
+Historically, we've always strived to address issues related to conversion and profitability. However, the predictive model developed by our ML team introduced a fresh opportunity for us to devise an entirely new solution.
+
+This predictive model looks at various inputs to make an educated guess about whether a user is likely to buy a policy. Through backtesting we found that a certain cohort of users who decide not to purchase policies are actually costing us money when we consider all the different expenses.
+
+💡
+A predictive model is like a special tool that can help us guess what might happen in the future. It looks at information from the past to figure out patterns and connections. Then, using those patterns, it makes educated guesses about things we don't know yet.
+Goals
+Specific goal
+With this new model, our goal was to identify these unlikely-to-convert users within our flow and redirect them to our partners who can also offer them a life insurance policy.
+
+In the past, we have redirected our users to life insurance partners when we deemed it more beneficial for them. This approach is mutually advantageous: they are more likely to find coverage with our partners, and we avoid incurring operational costs. However, our success in this strategy has been limited due to our restricted understanding of whom to redirect. The newly developed model, though, enhances our ability to make more informed decisions.
+
+Measures of success
+Revenue per impression. This would tell us whether the users who do go through our funnel after seeing the new treatment are actually converting at a higher rate compared to them not being identified by this model.
+Lift in partner impressions. This directly translates to revenue generated by taking an identified user through to the model to one of our partners.
+What we shipped
+Transitional loading page
+Modified quote page
+My process
+Understand → Identify → Execute
+
+Understand
+Understanding the model
+One of the most formative lessons I've learned at Ladder, specifically in working in the life insurance space, is how data and design interplay together. Despite the apparent simplicity of the end designs, the decision-making process behind them is complex due to our interpretation of the data.
+
+I frequently parsed through SQL queries during this stage of the project
+During this project, a significant part of my time was spent delving into the details of how the predictive model operates. I asked our machine learning engineer various questions about the model, such as the factors it considers, projected revenue for each cohort, and the most compelling traffic slice. While this might not seem like conventional design work, understanding the model's inner workings was crucial for making well-informed design decisions later on.
+
+Understanding how design fits in here
+As I grasped the workings of the model, my understanding of how design would interact with it also evolved gradually. By delving into details such as the specific user cohort targeted by the model and its inputs, I gained a more informed perspective on the language and framing.
+
+We were aware that this model would operate at the quote stage, a relatively early phase in the application process. Focusing on users at this stage, where they've just begun providing some inputs, required designs that could alleviate a potentially jarring experience. Directing a user seeking a quote to explore other life insurance partners immediately upon arrival could be confusing. The design challenge, therefore, involved finding a thoughtful way to communicate to these users that we're not a suitable fit for them.
+
+Identify
+Identifying the design principles
+To help guide the design exploration process, I first came up with a few design principles:
+
+Be transparent about the problem
+
+Clearly outlining the problems that a solution addresses makes selling that solution easier. We shouldn't sugarcoat things as a mixed message would actually be more confusing for users. In this case, the design, particularly the copy, needs to explicitly communicate to users the challenges they might encounter by choosing Ladder (e.g., higher prices, potential for rejection, overall mismatch).
+
+Provide a solution
+
+Once the problem is presented, the solution should be evident to users. We need to convey that while users are welcome to proceed with Ladder, we strongly recommend considering our life insurance partners as they would be a better fit for them.
+
+Align with the main user objective
+
+We know that at this stage, the quote is top of mind for users. While our goal here is to redirect them to our partners, we still have to present them a quote. This doesn't necessarily mean, however, that we have to use our existing quote page (more on this later).
+
+Identifying the design solutions
+A couple questions that I had to answer as I began to explore design treatments include:
+
+Where should we surface this treatment?
+Showing this cohort a price on the quote page may reduce confusion. They came for a quote, and presenting it earlier could pose issues.
+I also considered displaying it after they've received a quote. However, data shows a substantial drop-off on the quote page. Showing the treatment afterward means those users who dropped off wouldn't have seen it. This is crucial as we generate revenue from the redirected users to life insurance partners.
+Should we use the same quote page we have today?
+Given that the larger goal is to divert users at this point, we should be open to rethinking this version of the quote page and not feel constrained in using the exact experience we have today… i.e. feel free to rethink the quote page to optimize for this re-route experience
+Flows we considered
+Existing quote page
+Execute
+Design explorations
+Design exploration #01
+Design exploration #02
+Design exploration #03
+Design exploration #04
+During the exploration phase, I grappled with organizing page components (quote, problem, solution). I worked with our UX Content Designer to figure out the right hierarchy and which component to emphasize the most. A huge part of this was the copy itself so it would be remiss of me to not give a shout-out to our Content Designer, Heather, for all the work she did here.
+
+After extensive collaboration with both the project and design teams, I settled on this version:
+
+Final version
+We chose to highlight better alternatives to Ladder upfront, favoring immediate presentation over placing them lower on the page. There was debate within the team—some favored showing the quote or potential problems first. My instinct was that elevating partners early in the hierarchy would communicate their importance to users. This is also coupled with the fact that we generate more revenue from users who visit these partners.
+
+Options
+Directly beneath the partner options are the potential problems users could face if they proceeded with Ladder and their quote. I paired these two components as the initial bullet point about their price increasing complemented the quote on the right. This also downplayed the quote slightly which, again, from a hierarchal point of view made sense.
+
+Potential problems
+De-risking
+With a potential design in view, I decided to de-risk our solution by presenting this design in front of our users. I created a user test plan that took users through our flow with this treatment. I was most curious about how jarring this page would be for users who came for a quote and what would make them more compelled to check out the other partners.
+
+Surprisingly, users were very receptive to the transparency of the page and thought it actually created more trust for Ladder. They liked how Ladder wasn't just trying to make money and were willing to lose out on potential business with them if it meant they could get better coverage elsewhere.
+
+I also learned that we had to provide a bit more detail on who these partners are and why exactly Ladder is less likely to offer the coverage they need.
+
+Users also found that the page was a bit jarring to see immediately after providing the last input. To mitigate this feeling, I came up with a transitional loading page that gave a bit more transparency around what we were doing in the backend. I asked our engineer to create some artificial delay on this page to further reinforce the idea that we're doing our due diligence with the inputs they have provided so far.
+
+Loading page
+Results
+📈
+After shipping, we saw an **increase of ~$4.6~$7.5 in revenue per impression** compared to Control, and a **9% increase in partner impressions**.
+` // full case study text goes here
+    },
+
+    {
+        slug: "ladder/first-payment-failure",
+        summary: `
+I led design efforts to reduce first payment failures, a major driver of customer lapse at Ladder. By introducing ACH balance checks, clearer alerts, actionable notifications, and a redesigned billing experience, we cut payment failures by 50%, saving around 130 policies from lapsing each month. The work reframed confusing mental models and improved user trust and retention.
+
+`,
+        fullText: `Background
+Retention as a new focus
+In mid-2022, I became the design lead for a new product team dedicated solely to customer retention. Ladder had traditionally prioritized customer acquisition over retention for various reasons, but mainly because it was more important to secure customers than to ensure they didn't switch to a competitor or cancel their policy after purchase. Recent data trends, however, indicated that we needed to start focusing more on retention, prompting leadership to spin up a new team.
+
+Problem: First payment failure
+Our team focused on several areas, one of which was reducing customer lapse. By examining our data and gathering qualitative insights from our customer support team, we found that payment failure was a major contributor to customer lapse. Put simply, users who miss a payment—whether their first or a subsequent recurring payment—will lose their coverage after purchasing a policy.
+
+We decided to prioritize addressing payment failure first, as it was the most straightforward issue to tackle, yet still had a meaningful impact. Our goal was to prevent customers from missing their first payment.
+
+Looking at the data
+We looked at the data to gain a better understanding of the opportunity and impact of reducing first payment failure (FPF). We found that approximately 2.5% of all new customers who purchase a policy fail to make their first payment. Of that cohort, only 38% manage to resolve the issue. Although 2.5% may seem small, it accumulates to a significant number of policies that are ultimately cancelled.
+
+What's causing users to fail their first payment?
+Drilling into the data further helped us to understand how users fail their first payment. Users can pay for their policy with either a credit card or by connecting their ACH bank account. All FPF occur for users who connect their ACH account, as they often don't have enough funds in their account to cover the first month's premium.
+
+Design
+To solve for FPF, we decided to design a system that can both prevent a FPF from occurring in the first place and intervene when it does happen.
+
+Prevention
+The first payment occurs right after a user accepts their policy. The user journey will typically look like this:
+
+User journey
+To avoid a FPF, we decided to run a balance check on a user's ACH account when they connect through Plaid. If the balance check reveals that the user does not have enough funds to cover the first month's premium, we would notify them and give them the option to pay with an alternative payment method.
+
+Balance check
+Principles
+To help guide the design exploration process, I first came up with a few design principles:
+
+Inform
+
+Users should immediately understand that they have insufficient funds in their account. They should also quickly understand the consequences of missing their first payment: specifically that their policy won't be activated.
+
+Don't patronize
+
+Potentially not being able to make a payment can be a sensitive matter. Avoid making users feel like it is their fault.
+
+Give users freedom
+
+While missing a first payment would not be ideal for us, we still want to give users the option to continue with their chosen payment method.
+
+ACH balance check
+After a user connects their ACH account and we determined that there are insufficient funds, we would surface this screen to them. From here, they can change their payment method or proceed anyway.
+
+Balance check
+Alert
+If a user decides to continue with this payment method then we would show an alert on the confirmation page where they give us permission to charge their account. This alert would remind them of the issue and provide one last opportunity to fix the issue.
+
+Alert
+Payment switch
+If a user decides to switch their payment from here then we would take them back to the billing page with the credit card option defaulted to nudge them to pay with a credit card instead.
+
+Payment switch
+Intervention
+We implemented measures to intervene and help users fix their FPF in the following scenarios:
+
+Users still choose to proceed with an incorrect payment method
+If our balance check came back successful but the ACH account becomes insufficient during the delay before the transaction is completed
+These measures include a revamped notification plan and a more robust billing section in a user's account settings.
+
+Notification plan
+Once a FPF is detected, users have 10 days to resolve the issue by either adding funds to their account or switching to another payment method. In the past, emails were sent to users during this 10-day period to encourage them to fix their payment issue. After auditing this email campaign, we identified that both the content of the emails and the type of communication could be improved.
+
+I collaborated with our UX writer to make our emails more informative and actionable. I also worked with our product manager to introduce SMS messages along with emails, ensuring that users become aware of the issue.
+
+Old email
+
+Old email
+New email
+
+Bringing in more specific details such as payment method that failed and reasoning
+Bringing in more specific details such as payment method that failed and reasoning
+
+Billing section
+We also wanted to make it clearer for users that navigate to their billing section in their account settings what the issue is and how they can fix it. Specifically, a user should be able to get the answers to these questions in the billing section:
+
+What payment did I make? (Month of May etc)
+What is the status of my payment? (Pending, Successful, Failed etc)
+How much was due? ($100 etc)
+When was it due? (May 2nd etc)
+How can I fix the problem? (Make a payment)
+I designed a new component in our billing section to answer these questions. This component essentially acts as a status indicator that informs and provides an action for users to take.
+
+Billing component
+Making a payment
+Prior to this project, fixing a FPF required users to update their payment method to initiate a charge on their credit card or account. This mental model of updating a payment method to fix the FPF issue didn't make sense to me and I felt seemed confusing to users. So instead, I redesigned this mechanism to change the mental model from updating a payment method to making a payment. My reasoning was that if a payment failed, then there must be an outstanding payment to be made.
+
+Before
+
+Old way of initiating a charge on a user's payment method
+After
+
+Billing modal
+I designed a modal that can be reused in various areas of the billing section. It contains two key pieces of information: their saved payment method and a payment summary of the invoice they're paying for and the amount. Users can also update their payment method within this modal.
+
+Changing payment method
+I also integrated our balance check into the modal if a user proceeds with the same or another ACH payment method that has insufficient funds.
+
+Balace check in modal
+Results
+📈
+After shipping, we saw a **50% reduction** in first payment failure, leading to about **130 policies saved from lapses** a month.` // full case study text goes here
+    },
+
+
+    {
+        slug: "ladder/affordability",
+        summary: `
+To reduce coverage gaps caused by affordability concerns, I designed a quote page treatment that guided users toward budget-friendly coverage amounts. Using lightweight UI and thoughtful copy, we helped users make informed decisions without feeling restricted or patronized. The solution led to a 14% lift in policy uptake and a 4% increase in overall funnel conversion.
+
+`,
+        fullText: `Problem
+Ladder's mission is to protect families by helping people get covered through a policy that is right for them. As policy offers become more expensive, however, the rate of users accepting their policies drops. Users who feel that life insurance is outside of their affordable budget will not get the coverage their loved ones need. And rather than lowering their coverage amount, users elect not to get life insurance altogether due to it feeling unaffordable. This leads to a coverage gap which we are aiming to decrease.
+
+Goal
+Our goal was to design a treatment in our funnel to help users select a policy that fits within their budget. To do this, we used effective design and copy to guide users towards a coverage amount that would result in an affordable policy.
+
+Success metrics
+Increase in number of people taking a policy.
+
+What we shipped
+Old
+Old version
+New
+New version
+Research
+Research conducted by our data science team on the pattern of users taking a policy prompted this project. Through their analyses, they were able to understand the traits of a user in relation to whether or not they would take on a policy, making it possible for us to determine the affordability of a monthly premium for an offer for the user. They developed a model to determine at what point a coverage amount for a policy would make a policy affordable for a user. We only showed the treatment to a certain cohort of users, since affordability isn't a problem for everyone.
+
+Designs
+Principles
+To help guide the design exploration process, I first came up with a few design principles:
+
+Inform on what we think is affordable
+Our treatment would bring value to users by informing them. We assume that users are not only unable to afford a certain policy, but they also don't know they can't afford it until late in the buying experience. In terms of design and copy, this means displaying the necessary information without overwhelming users, so they can tell if the policy they are selecting is unaffordable.
+
+Give users freedom
+Our goal was to help users select a policy with an affordable coverage amount. However, we did not want to prevent users from selecting a coverage amount that would make the policy unaffordable. In other words, we did not want to impose anything on users. Users have individual needs, and making it difficult for them to get what they need would be a bad experience.
+
+Don't patronize
+Affordability is an important consideration for users, but it can also be sensitive for some. We have their best interests in mind, but we don't want to appear condescending by implying they can't afford a certain policy.
+
+Explorations
+I considered two areas of our flow when designing: the quote page and the offer page. These pages are key points in the journey where users can select a coverage amount for a policy, determining if it is affordable. A majority of the design process was determining where was the best location for the treatment: the quote page, the offer page, or both. Each option had pros and cons to consider. In the end, we decided to test our hypothesis on the quote page first, as it receives more traffic, allowing us to get quick results.
+
+Here are a few design explorations I considered for the quote page:
+
+Version 1
+Version 1
+Version 1
+Version 2
+Version 2
+Version 2
+Version 3
+Version 3
+We realized that versions 1 and 2 were too heavy-handed in their recommendations and brought in unnecessary complexity, so we decided to further refine version 3.
+
+Shipped solution
+Final version
+Slider bar
+I designed the coverage amount slider bar to include a Recommended for you range that would display where users should ideally select. The solution here is to make the range as lightweight as possible so as to not hinder the overall experience of selecting a coverage amount, but still pique a user's interest and be obvious as to what the intention is.
+
+Slider bar
+Helper text
+Clicking on Recommended for You would open a box on the right panel displaying helper text. I collaborated with our UX writer to create content that was both informative and vague enough to avoid a patronizing tone.
+
+Helper text
+Results
+📈
+After shipping, we saw a **14% lift in our success metric,** which after dilution, contributed to **a 4% increase in funnel conversion.**` // full case study text goes here
     },
     // Add more projects...
 ];
