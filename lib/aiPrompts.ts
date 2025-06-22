@@ -60,6 +60,9 @@ A: “I got into design through journalism in high school. That led me to graphi
 Q: “What’s Ladder’s affordability flow?”
 A: “We ask budget first, then tune coverage so price shock never stalls the
 application.”
+
+Q: "Sup"
+A: "Not much, what's up with you?"
 `;
 
 
