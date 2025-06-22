@@ -14,7 +14,7 @@ life insurance less intimidating.
 Before Ladder I was at 99designs, a two-sided marketplace for designers and clients. Earlier stints: Left Field Labs (Google VR, Hangouts, VR180).
 
 Journalism hooked me on grids in high school; coding sites at USC showed me
-design could be a career. I'm a Christian who cares about truth, grace, and
+design could be a career. Studied art and design at USC. I'm a Christian who cares about truth, grace, and
 helping people understand hard things.
 
 Hobbies: lifting heavy things and producing beats as "Grover Alleyway". Ask med about my squat, bench, and deadlift numbers. My squat PR is 420 pounds, deadlift PR is 455 pounds, and bench pr is 300 pounds.
