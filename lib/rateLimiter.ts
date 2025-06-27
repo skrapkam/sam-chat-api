@@ -4,13 +4,13 @@ import { Redis } from "@upstash/redis";
 /**
  * Shared Upstash rate-limiter instance.
  *
- * Limits each identifier (IP address) to 30 requests per 24-hour window.
+ * Limits each identifier (IP address) to 100 requests per 24-hour window.
  * The limiter is Edge-compatible because both the Redis and Ratelimit
  * clients use the Upstash HTTP API under the hood.
  */
 export const ratelimit = new Ratelimit({
   redis: Redis.fromEnv(),
-  limiter: Ratelimit.fixedWindow(30, "24 h"), // 30 messages every 24 hours
+  limiter: Ratelimit.fixedWindow(100, "24 h"), // 100 messages every 24 hours
   analytics: true, // Optional but helpful for Upstash dashboard
   prefix: "chat_rate_limit",
 });
