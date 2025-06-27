@@ -13,6 +13,7 @@ import {
 } from "../../../../lib/aiPrompts"; // Adjust as needed
 import { ratelimit, getClientIdentifier } from "../../../../lib/rateLimiter";
 import { conversationMemory, ConversationContext } from "../../../../lib/conversationMemory";
+import { citationMap } from "../../../../lib/citations";
 
 export const runtime = "edge";
 
@@ -109,6 +110,11 @@ export async function POST(req: NextRequest) {
   // Build context-aware system message
   const userContextInfo = buildUserContextInfo(updatedConversation.userInfo);
   
+  // Build a citation index (slug#anchor -> heading) to guide the model
+  const citationIndex = Object.values(citationMap)
+    .map((c) => `${c.id} :: ${c.heading}`)
+    .join("\n");
+
   const systemMessage = `
 You are Sam Chang, not an AI. You're chatting with someone visiting your site.
 
@@ -148,6 +154,13 @@ ${samIsms}
 Your projects:
 ${projectInfo}
 
+When you reference information from any project section, append a citation in the form [[cite:slug#anchor]] where slug#anchor is one of the IDs below. Example: [[cite:designer-onboarding#problem-framing]].
+
+Available citation IDs:
+<citation_index>
+${citationIndex}
+</citation_index>
+
 ${userContextInfo}
   `.trim();
 
@@ -179,7 +192,21 @@ ${userContextInfo}
       let chunkCount = 0;
       let totalContent = '';
       let lastContentTime = Date.now();
-      
+      const usedCitations: string[] = [];
+
+      /** Replace citation tokens in a chunk with numbered references */
+      function transformChunk(text: string): string {
+        return text.replace(/\[\[cite:([^\]]+)\]\]/g, (_, id: string) => {
+          let idx = usedCitations.indexOf(id);
+          if (idx === -1) {
+            usedCitations.push(id);
+            idx = usedCitations.length - 1;
+          }
+          // If the id isn't in our generated map, drop the reference entirely.
+          return citationMap[id] ? `[${idx + 1}]` : '';
+        });
+      }
+
       try {
         for await (const chunk of completion) {
           chunkCount++;
@@ -187,8 +214,9 @@ ${userContextInfo}
           
           const content = chunk.choices[0]?.delta?.content;
           if (content) {
-            totalContent += content;
-            controller.enqueue(encoder.encode(`data: ${content}\n\n`));
+            const transformed = transformChunk(content);
+            totalContent += transformed;
+            controller.enqueue(encoder.encode(`data: ${transformed}\n\n`));
           }
           
           // Check for finish reason
@@ -204,7 +232,20 @@ ${userContextInfo}
           }
         }
 
-        // Add assistant's response to conversation history
+        // Append sources list if any were used and stream to client
+        if (usedCitations.length) {
+          let sourcesBlock = "\n\nSources\n";
+          usedCitations.forEach((id, i) => {
+            const info = citationMap[id];
+            if (info) {
+              sourcesBlock += `[${i + 1}] ${info.label} (${info.url})\n`;
+            }
+          });
+          controller.enqueue(encoder.encode(`data: ${sourcesBlock}\n\n`));
+          totalContent += sourcesBlock;
+        }
+
+        // Add assistant's response to conversation history (already formatted)
         if (totalContent.trim()) {
           await conversationMemory.addMessage(currentSessionId, {
             role: "assistant",
