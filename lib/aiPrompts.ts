@@ -55,7 +55,7 @@ RESPONSE STRUCTURE:
 
 CRITICAL: You must include literal newline characters in your response. Use \n\n (actual newline characters) between paragraphs and sections. For example:
 
-"Here's my response:\n\n**Section 1**\n\n- First point\n- Second point\n\n**Section 2**\n\n- Another point\n\nConclusion paragraph."
+"Here's my response:\n\nSection 1\n\n- First point\n- Second point\n\nSection 2\n\n- Another point\n\nConclusion paragraph."
 
 The \n\n must be actual newline characters in the response text, not just formatting instructions.
 
@@ -152,24 +152,24 @@ export const projectSummaries: ProjectSummary[] = [
         slug: "designer-onboarding",
         summary: `
 DECISIONS:
-- Required designers to apply before working on the platform
-- Removed wizard-style onboarding in favor of repurposing account settings
-- Introduced application progress indicator to guide designers
-- Limited unreviewed designer activity
-- Redesigned curation tool for internal reviewers
+• Required designers to apply before working on the platform
+• Removed wizard-style onboarding in favor of repurposing account settings
+• Introduced application progress indicator to guide designers
+• Limited unreviewed designer activity
+• Redesigned curation tool for internal reviewers
 
 APPROACH:
-- Identified issues through user interviews, data audits, and team workshops
-- Collaborated with Curation, Community, and Product teams
-- Iterated onboarding UI across 3 versions based on feedback and engineering constraints
-- Conducted hypotheses workshops and usability testing
-- Scoped work strategically to ship incrementally
+• Identified issues through user interviews, data audits, and team workshops
+• Collaborated with Curation, Community, and Product teams
+• Iterated onboarding UI across 3 versions based on feedback and engineering constraints
+• Conducted hypotheses workshops and usability testing
+• Scoped work strategically to ship incrementally
 
 OUTCOMES:
-- 97% drop in ID verification costs (projected $230K/year savings)
-- Increase in designer quality and faster time to meaningful action
-- Community praise and better designer experience
-- Curation team can promote qualified designers more efficiently
+• 97% drop in ID verification costs (projected $230K/year savings)
+• Increase in designer quality and faster time to meaningful action
+• Community praise and better designer experience
+• Curation team can promote qualified designers more efficiently
 `,
         fullText: `Introduction
     Background
@@ -426,29 +426,26 @@ OUTCOMES:
         slug: "your-work",
         summary: `
 DECISIONS:
-- Refresh an outdated client dashboard ("Your work") last updated in 2015
-- Align the product with 99designs' shift from contest-based to direct-work business model
-- Focus on improving client workflows by highlighting actionable information
-
-
+• Refresh an outdated client dashboard ("Your work") last updated in 2015
+• Align the product with 99designs' shift from contest-based to direct-work business model
+• Focus on improving client workflows by highlighting actionable information
 
 APPROACH:
-- Interviewed 7 clients to identify pain points
-- Key finding: clients wanted to manage designers more efficiently, especially around repetitive tasks
-- Shifted from pill navigation to scalable sidebar
-- Added designer avatars to aid recognition and distinguish project types
-- Introduced quick actions tailored to project stages (mobile and desktop)
-- Implemented contextual messages for project overviews
-- Shared work continuously with design team for feedback
-- Led post-launch usability testing sessions
-
+• Interviewed 7 clients to identify pain points
+• Key finding: clients wanted to manage designers more efficiently, especially around repetitive tasks
+• Shifted from pill navigation to scalable sidebar
+• Added designer avatars to aid recognition and distinguish project types
+• Introduced quick actions tailored to project stages (mobile and desktop)
+• Implemented contextual messages for project overviews
+• Shared work continuously with design team for feedback
+• Led post-launch usability testing sessions
 
 OUTCOMES:
-- Clients found the redesign intuitive and easy to use
-- Quick actions and contextual messages were well-received
-- Most clients didn't consciously notice the UI changes—yet navigated easily, showing the update was seamless
-- Validated that not every improvement needs to be noticed to be impactful
-- Reinforced importance of regular design sharing and team feedback
+• Clients found the redesign intuitive and easy to use
+• Quick actions and contextual messages were well-received
+• Most clients didn't consciously notice the UI changes—yet navigated easily, showing the update was seamless
+• Validated that not every improvement needs to be noticed to be impactful
+• Reinforced importance of regular design sharing and team feedback
 `,
         fullText: `Introduction
         Background
@@ -528,38 +525,24 @@ OUTCOMES:
         slug: "google",
         summary: `
 DECISIONS:
-Design engaging product marketing experiences for Google, specifically:
-
-A long-form instructional page for VR180 content creators
-
-A scalable navigation menu for Google VR
-
-A download page for Hangouts Chat
-
-
+• Design engaging product marketing experiences for Google, specifically:
+  - A long-form instructional page for VR180 content creators
+  - A scalable navigation menu for Google VR
+  - A download page for Hangouts Chat
 
 APPROACH:
--VR180 Page: Tackled dry instructional content by designing with delight in mind—using curved image containers, interactive tips, and motion to create a tactile, engaging experience. Led UX and UI design while collaborating closely with the UX Lead and Art Director. Built prototypes to communicate interaction details clearly with stakeholders and developers
+• VR180 Page: Tackled dry instructional content by designing with delight in mind—using curved image containers, interactive tips, and motion to create a tactile, engaging experience. Led UX and UI design while collaborating closely with the UX Lead and Art Director. Built prototypes to communicate interaction details clearly with stakeholders and developers
 
-Google VR Menu: Redesigned a scalable and on-brand navigation menu, inspired by existing Google UI patterns. Adjusted labeling ("More from Google VR") to clarify purpose and maintain visual harmony over animated backgrounds. Considered product placement fairness—proposed alphabetizing to avoid bias
+• Google VR Menu: Redesigned a scalable and on-brand navigation menu, inspired by existing Google UI patterns. Adjusted labeling ("More from Google VR") to clarify purpose and maintain visual harmony over animated backgrounds. Considered product placement fairness—proposed alphabetizing to avoid bias
 
-Hangouts Chat: Designed a clean, user-friendly download page aligned with Google's brand
-
-
-
+• Hangouts Chat: Designed a clean, user-friendly download page aligned with Google's brand
 
 OUTCOMES:
-Created a more enjoyable and interactive learning experience for VR180 content creators
-
-Improved cross-site consistency and scalability with the new Google VR menu design
-
-Delivered design solutions that balanced brand standards, scalability, and clarity
-
-Accelerated client approvals and developer handoff through prototyping
-
-Strengthened the user experience of multiple Google product marketing surfaces
-
-
+• Created a more enjoyable and interactive learning experience for VR180 content creators
+• Improved cross-site consistency and scalability with the new Google VR menu design
+• Delivered design solutions that balanced brand standards, scalability, and clarity
+• Accelerated client approvals and developer handoff through prototyping
+• Strengthened the user experience of multiple Google product marketing surfaces
 `,
         fullText: `Google
         Designing for Google in partnership with Left Field Labs
@@ -849,7 +832,7 @@ Results
 We launched this project in May 2024 and anxiously monitored the experiment dashboard hourly for the next month and a half. To our relief, no angry customers called in, and while there was some drop-off on the checkout page, it was within normal ranges. Most importantly, we started to see noticeable improvements in our contribution margins.
 
 📈
-After shipping, we saw an **increase in gross margin by 82% and a reduction in cost by 64%.**
+After shipping, we saw an increase in gross margin by 82% and a reduction in cost by 64%.
 Impact on company
 This project became one of Ladder's most impactful initiatives in 2024. By improving our contribution margins, we created a compelling narrative about the company's current performance and future trajectory—an invaluable asset for fundraising and extending our runway.
 
@@ -867,9 +850,7 @@ Looking back, I wouldn't have avoided the conflict I encountered. Instead, I lea
     {
         slug: "ladder/reroute",
         summary: `
-To reduce costs from low-converting users, I designed a quote experience powered by a machine learning model that identified users unlikely to purchase a policy. We guided these users toward better-fit partner options while maintaining transparency and trust. By elevating partner recommendations early in the flow and refining messaging through user testing, we increased revenue per impression by ~$4.6–$7.5 and saw a 9% lift in partner impressions.
-
-`,
+To reduce costs from low-converting users, I designed a quote experience powered by a machine learning model that identified users unlikely to purchase a policy. We guided these users toward better-fit partner options while maintaining transparency and trust. By elevating partner recommendations early in the flow and refining messaging through user testing, we increased revenue per impression by ~$4.6–$7.5 and saw a 9% lift in partner impressions.`,
         fullText: `Background
 What is this?
 Ladder's mission is to protect families by helping people get covered through a policy. Still, we've had setbacks matching everyone with the best policy, which is not great for both our users and Ladder. In 2023, our Machine Learning team developed a model to improve these matches. This project showcases how I designed a solution that utilizes this model.
@@ -975,16 +956,14 @@ Users also found that the page was a bit jarring to see immediately after provid
 Loading page
 Results
 📈
-After shipping, we saw an **increase of ~$4.6~$7.5 in revenue per impression** compared to Control, and a **9% increase in partner impressions**.
+After shipping, we saw an increase of ~$4.6~$7.5 in revenue per impression compared to Control, and a 9% increase in partner impressions.
 ` // full case study text goes here
     },
 
     {
         slug: "ladder/first-payment-failure",
         summary: `
-I led design efforts to reduce first payment failures, a major driver of customer lapse at Ladder. By introducing ACH balance checks, clearer alerts, actionable notifications, and a redesigned billing experience, we cut payment failures by 50%, saving around 130 policies from lapsing each month. The work reframed confusing mental models and improved user trust and retention.
-
-`,
+I led design efforts to reduce first payment failures, a major driver of customer lapse at Ladder. By introducing ACH balance checks, clearer alerts, actionable notifications, and a redesigned billing experience, we cut payment failures by 50%, saving around 130 policies from lapsing each month. The work reframed confusing mental models and improved user trust and retention.`,
         fullText: `Background
 Retention as a new focus
 In mid-2022, I became the design lead for a new product team dedicated solely to customer retention. Ladder had traditionally prioritized customer acquisition over retention for various reasons, but mainly because it was more important to secure customers than to ensure they didn't switch to a competitor or cancel their policy after purchase. Recent data trends, however, indicated that we needed to start focusing more on retention, prompting leadership to spin up a new team.
@@ -1085,16 +1064,14 @@ I also integrated our balance check into the modal if a user proceeds with the s
 Balace check in modal
 Results
 📈
-After shipping, we saw a **50% reduction** in first payment failure, leading to about **130 policies saved from lapses** a month.` // full case study text goes here
+After shipping, we saw a 50% reduction in first payment failure, leading to about 130 policies saved from lapses a month.` // full case study text goes here
     },
 
 
     {
         slug: "ladder/affordability",
         summary: `
-To reduce coverage gaps caused by affordability concerns, I designed a quote page treatment that guided users toward budget-friendly coverage amounts. Using lightweight UI and thoughtful copy, we helped users make informed decisions without feeling restricted or patronized. The solution led to a 14% lift in policy uptake and a 4% increase in overall funnel conversion.
-
-`,
+To reduce coverage gaps caused by affordability concerns, I designed a quote page treatment that guided users toward budget-friendly coverage amounts. Using lightweight UI and thoughtful copy, we helped users make informed decisions without feeling restricted or patronized. The solution led to a 14% lift in policy uptake and a 4% increase in overall funnel conversion.`,
         fullText: `Problem
 Ladder's mission is to protect families by helping people get covered through a policy that is right for them. As policy offers become more expensive, however, the rate of users accepting their policies drops. Users who feel that life insurance is outside of their affordable budget will not get the coverage their loved ones need. And rather than lowering their coverage amount, users elect not to get life insurance altogether due to it feeling unaffordable. This leads to a coverage gap which we are aiming to decrease.
 
@@ -1152,7 +1129,7 @@ Clicking on Recommended for You would open a box on the right panel displaying h
 Helper text
 Results
 📈
-After shipping, we saw a **14% lift in our success metric,** which after dilution, contributed to **a 4% increase in funnel conversion.**` // full case study text goes here
+After shipping, we saw a 14% lift in our success metric, which after dilution, contributed to a 4% increase in funnel conversion.` // full case study text goes here
     },
     // Add more projects...
 ];

@@ -2,6 +2,27 @@
 
 This guide explains how to integrate the enhanced chat API with conversation memory into your frontend project.
 
+## Project Summaries Formatting Fixes
+
+The project summaries in `lib/aiPrompts.ts` have been standardized to ensure consistent rendering in the frontend:
+
+### Issues Fixed:
+1. **Inconsistent bullet points**: Mixed usage of `-` (hyphens) and `•` (bullet points)
+2. **Inconsistent spacing**: Extra blank lines and inconsistent paragraph breaks
+3. **Template literal formatting**: Inconsistent indentation and spacing
+
+### Changes Made:
+- **Standardized bullet points**: All bullet points now use `•` consistently
+- **Cleaned up spacing**: Removed extra blank lines and standardized paragraph breaks
+- **Fixed template literals**: Ensured consistent formatting across all project summaries
+
+### Frontend Impact:
+These changes ensure that:
+- Bullet points render consistently across different browsers
+- Spacing is predictable and uniform
+- The content flows naturally in the chat interface
+- No unexpected formatting breaks occur
+
 ## Important: Line Break Handling
 
 The AI responses include proper line breaks and paragraph spacing. To display them correctly in your frontend:
