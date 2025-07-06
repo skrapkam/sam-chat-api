@@ -2,6 +2,72 @@
 
 This guide explains how to integrate the enhanced chat API with conversation memory into your frontend project.
 
+## Important: Line Break Handling
+
+The AI responses include proper line breaks and paragraph spacing. To display them correctly in your frontend:
+
+### CSS Styling
+```css
+/* Preserve line breaks and spacing */
+.message-content {
+  white-space: pre-wrap; /* This is crucial! */
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+/* For better paragraph spacing */
+.message-content p {
+  margin-bottom: 1em;
+}
+```
+
+### React Example
+```jsx
+function Message({ content, role }) {
+  return (
+    <div className={`message ${role}`}>
+      <div className="message-content">
+        {content}
+      </div>
+    </div>
+  );
+}
+```
+
+### Vue.js Example
+```vue
+<template>
+  <div class="message" :class="role">
+    <div class="message-content">{{ content }}</div>
+  </div>
+</template>
+
+<style scoped>
+.message-content {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+</style>
+```
+
+### Vanilla JavaScript Example
+```javascript
+function displayMessage(content, role) {
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${role}`;
+  
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'message-content';
+  contentDiv.textContent = content; // textContent preserves line breaks
+  
+  messageDiv.appendChild(contentDiv);
+  document.getElementById('chat-container').appendChild(messageDiv);
+}
+```
+
+**Key Point**: Use `white-space: pre-wrap` in CSS or `textContent` in JavaScript to preserve the line breaks from the AI responses.
+
 ## API Changes Summary
 
 The chat API now supports conversation memory with the following changes:
@@ -216,6 +282,7 @@ export function useChat() {
             if (content.trim()) {
               assistantMessage += content;
               // Update the last message (assistant's message)
+              // Note: Line breaks are preserved in the content string
               setMessages(prev => {
                 const newMessages = [...prev];
                 newMessages[newMessages.length - 1] = {
@@ -325,6 +392,24 @@ The API automatically extracts and remembers:
 - **User Context**: "The person you're chatting with is named John. They're from San Francisco. You were recently discussing design/product."
 
 ## Testing the Integration
+
+### Test Line Break Formatting
+To verify that line breaks are displaying correctly:
+
+1. **Send a message that should trigger a multi-paragraph response**, such as:
+   - "Tell me about your design philosophy"
+   - "What's your experience at Ladder?"
+   - "How did you get into design?"
+
+2. **Check that the response displays with proper paragraph spacing**:
+   - Paragraphs should be separated by blank lines
+   - Lists should be properly formatted
+   - Headers should have spacing before and after
+
+3. **Test with different response lengths**:
+   - Short responses (1-2 sentences)
+   - Medium responses (3-4 sentences with paragraph breaks)
+   - Long responses (multiple paragraphs)
 
 ### Test Conversation Flow:
 1. **First Message**: "Hi, my name is John and I'm from Seattle"
