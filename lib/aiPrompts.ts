@@ -692,7 +692,7 @@ After a user submits a life insurance application with us, we surface an interme
     },
 
 {
-        slug: "ladder/design-leadership",
+        slug: "design-leadership",
         summary: `
 As Senior Product Design Manager at Ladder, I focus on building a strong, collaborative design team and fostering customer empathy. I've grown the team through intentional pairing, personalized career plans, and monthly learning sessions. I led the creation of team values and broke down silos between product and visual design to improve alignment. To build customer understanding, I established a guerrilla research team and quarterly insight shares with support staff to bring user voices into the design process.
 `,
@@ -738,7 +738,7 @@ I also introduced quarterly knowledge-sharing sessions with our customer support
     },
 
     {
-        slug: "ladder/billing-checkout",
+        slug: "billing-checkout",
         summary: `
 To improve contribution margins, I led the redesign of Ladder's purchase flow by focusing on high-intent users and minimizing costs from low-intent ones. We tested auto-issuing policies when final prices matched initial quotes and moved billing earlier to signal intent—balancing UX clarity with business needs. Despite initial pushback from leadership, our final solution improved margins by 82% and reduced costs by 64%, becoming one of Ladder's most impactful 2024 initiatives. Along the way, I learned how healthy conflict can drive better outcomes when handled with composure and clarity.`,
         fullText: `Background
@@ -846,7 +846,7 @@ Looking back, I wouldn't have avoided the conflict I encountered. Instead, I lea
    
    
     {
-        slug: "ladder/reroute",
+        slug: "reroute",
         summary: `
 To reduce costs from low-converting users, I designed a quote experience powered by a machine learning model that identified users unlikely to purchase a policy. We guided these users toward better-fit partner options while maintaining transparency and trust. By elevating partner recommendations early in the flow and refining messaging through user testing, we increased revenue per impression by ~$4.6–$7.5 and saw a 9% lift in partner impressions.`,
         fullText: `Background
@@ -959,7 +959,7 @@ After shipping, we saw an increase of ~$4.6~$7.5 in revenue per impression compa
     },
 
     {
-        slug: "ladder/first-payment-failure",
+        slug: "first-payment-failure",
         summary: `
 I led design efforts to reduce first payment failures, a major driver of customer lapse at Ladder. By introducing ACH balance checks, clearer alerts, actionable notifications, and a redesigned billing experience, we cut payment failures by 50%, saving around 130 policies from lapsing each month. The work reframed confusing mental models and improved user trust and retention.`,
         fullText: `Background
@@ -1067,7 +1067,7 @@ After shipping, we saw a 50% reduction in first payment failure, leading to abou
 
 
     {
-        slug: "ladder/affordability",
+        slug: "affordability",
         summary: `
 To reduce coverage gaps caused by affordability concerns, I designed a quote page treatment that guided users toward budget-friendly coverage amounts. Using lightweight UI and thoughtful copy, we helped users make informed decisions without feeling restricted or patronized. The solution led to a 14% lift in policy uptake and a 4% increase in overall funnel conversion.`,
         fullText: `Problem
