@@ -46,24 +46,34 @@ export async function POST(req: NextRequest) {
   const bypassSecret = process.env.RATE_LIMIT_BYPASS_TOKEN;
   const isBypass = bypassSecret && bypassHeader === bypassSecret;
 
-  // Rate limiting: max 30 messages per 24-hour window per IP (unless bypassed)
-  if (!isBypass) {
-    const identifier = getClientIdentifier(req);
-    const rateLimitResult = await ratelimit.limit(identifier);
-    if (!rateLimitResult.success) {
-      return new Response(
-        JSON.stringify({ error: "Rate limit exceeded. Please try again tomorrow." }),
-        {
-          status: 429,
-          headers: {
-            "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
-            "Content-Type": "application/json",
-            "X-RateLimit-Limit": rateLimitResult.limit.toString(),
-            "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
-            "X-RateLimit-Reset": rateLimitResult.reset.toString(),
-          },
-        }
-      );
+  // Rate limiting: max 100 messages per 24-hour window per IP (unless bypassed)
+  if (!isBypass && ratelimit) {
+    try {
+      const identifier = getClientIdentifier(req);
+      const rateLimitResult = await ratelimit.limit(identifier);
+      if (!rateLimitResult.success) {
+        return new Response(
+          JSON.stringify({ error: "Rate limit exceeded. Please try again tomorrow." }),
+          {
+            status: 429,
+            headers: {
+              "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+              "Content-Type": "application/json",
+              "X-RateLimit-Limit": rateLimitResult.limit.toString(),
+              "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
+              "X-RateLimit-Reset": rateLimitResult.reset.toString(),
+            },
+          }
+        );
+      }
+    } catch (error) {
+      // Log error but don't fail the request - fail open
+      // Only log if it's not a common network error to reduce noise
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      if (!errorMessage.includes('fetch failed')) {
+        console.error("[Rate Limiter] Error during rate limiting:", error);
+      }
+      // Continue with request if rate limiting fails (fail open)
     }
   }
 
@@ -175,8 +185,23 @@ ${userContextInfo}
     ...updatedConversation.messages.slice(-10), // Keep last 10 messages for context
   ];
 
+  // Check for OpenAI API key
+  const openaiApiKey = process.env.OPENAI_API_KEY;
+  if (!openaiApiKey) {
+    return new Response(
+      JSON.stringify({ error: "OpenAI API key is not configured. Please set OPENAI_API_KEY environment variable." }),
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  }
+
   const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY!,
+    apiKey: openaiApiKey,
   });
 
   const completion = await openai.chat.completions.create({

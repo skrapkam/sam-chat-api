@@ -83,14 +83,33 @@ while (true) {
 
 ## Environment Variables
 
-Required environment variables:
+### Required
+- `OPENAI_API_KEY`: Your OpenAI API key (required for chat functionality)
 
+### Optional (for production)
+- `UPSTASH_REDIS_REST_URL`: Upstash Redis REST URL (required for rate limiting and conversation memory in production)
+- `UPSTASH_REDIS_REST_TOKEN`: Upstash Redis REST token (required for rate limiting and conversation memory in production)
+- `RATE_LIMIT_BYPASS_TOKEN`: Token to bypass rate limiting (optional)
+- `ALLOWED_ORIGIN`: CORS allowed origin (defaults to "*")
+
+### Development Mode
+If Redis environment variables are not set, the API will:
+- **Rate Limiting**: Disabled (all requests allowed)
+- **Conversation Memory**: Uses in-memory storage (sessions lost on server restart)
+
+For production, you should set up Upstash Redis:
+1. Sign up at https://console.upstash.com/
+2. Create a Redis database
+3. Copy the REST URL and token
+4. Add them to your environment variables
+
+### Example `.env.local` file:
 ```env
 OPENAI_API_KEY=your_openai_api_key
-UPSTASH_REDIS_REST_URL=your_redis_url
-UPSTASH_REDIS_REST_TOKEN=your_redis_token
+UPSTASH_REDIS_REST_URL=https://your-redis-instance.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your_redis_token_here
 RATE_LIMIT_BYPASS_TOKEN=optional_bypass_token
-ALLOWED_ORIGIN=* # or specific origin
+ALLOWED_ORIGIN=*
 ```
 
 ## Development
@@ -131,7 +150,8 @@ Sam: "Yeah, it's been a great journey. Since we were just talking about Ladder..
 
 ## Rate Limiting
 
-- Default: 30 messages per 24-hour window per IP
+- Default: 100 messages per 24-hour window per IP (when Redis is configured)
+- Disabled: If Redis is not configured, rate limiting is disabled for development
 - Bypass: Use `x-bypass-token` or `authorization` header with `RATE_LIMIT_BYPASS_TOKEN`
 
 ## Architecture

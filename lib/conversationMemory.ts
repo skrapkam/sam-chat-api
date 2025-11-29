@@ -15,11 +15,37 @@ export interface ConversationContext {
 }
 
 export class ConversationMemory {
-  private redis: Redis;
+  private redis: Redis | null;
   private readonly TTL = 24 * 60 * 60; // 24 hours in seconds
+  private inMemoryStore: Map<string, ConversationContext> = new Map();
+
+  private redisEnabled: boolean = true;
 
   constructor() {
-    this.redis = Redis.fromEnv();
+    const hasRedisConfig =
+      process.env.UPSTASH_REDIS_REST_URL &&
+      process.env.UPSTASH_REDIS_REST_TOKEN;
+
+    if (hasRedisConfig) {
+      try {
+        this.redis = Redis.fromEnv();
+        this.redisEnabled = true;
+      } catch (error) {
+        console.warn(
+          "[Conversation Memory] Failed to initialize Redis. Using in-memory storage. " +
+          "Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN environment variables to enable Redis."
+        );
+        this.redis = null;
+        this.redisEnabled = false;
+      }
+    } else {
+      console.warn(
+        "[Conversation Memory] Upstash Redis not configured. Using in-memory storage. " +
+        "Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN environment variables to enable Redis."
+      );
+      this.redis = null;
+      this.redisEnabled = false;
+    }
   }
 
   private getSessionKey(sessionId: string): string {
@@ -28,23 +54,50 @@ export class ConversationMemory {
 
   async getConversation(sessionId: string): Promise<ConversationContext | null> {
     try {
-      const data = await this.redis.get(this.getSessionKey(sessionId));
-      return data as ConversationContext | null;
+      if (this.redis && this.redisEnabled) {
+        const data = await this.redis.get(this.getSessionKey(sessionId));
+        return data as ConversationContext | null;
+      } else {
+        // Fallback to in-memory storage
+        return this.inMemoryStore.get(sessionId) || null;
+      }
     } catch (error) {
-      console.error('Error getting conversation:', error);
-      return null;
+      // If Redis fails, disable it and fall back to in-memory storage
+      if (this.redisEnabled) {
+        console.warn('[Conversation Memory] Redis operation failed, falling back to in-memory storage:', error instanceof Error ? error.message : 'Unknown error');
+        this.redisEnabled = false;
+      }
+      // Fallback to in-memory storage on error
+      return this.inMemoryStore.get(sessionId) || null;
     }
   }
 
   async saveConversation(context: ConversationContext): Promise<void> {
     try {
-      await this.redis.setex(
-        this.getSessionKey(context.sessionId),
-        this.TTL,
-        context
-      );
+      if (this.redis && this.redisEnabled) {
+        await this.redis.setex(
+          this.getSessionKey(context.sessionId),
+          this.TTL,
+          context
+        );
+        // Also update in-memory store as backup
+        this.inMemoryStore.set(context.sessionId, context);
+      } else {
+        // Fallback to in-memory storage
+        this.inMemoryStore.set(context.sessionId, context);
+        // Clean up old entries after TTL (simple cleanup)
+        setTimeout(() => {
+          this.inMemoryStore.delete(context.sessionId);
+        }, this.TTL * 1000);
+      }
     } catch (error) {
-      console.error('Error saving conversation:', error);
+      // If Redis fails, disable it and fall back to in-memory storage
+      if (this.redisEnabled) {
+        console.warn('[Conversation Memory] Redis operation failed, falling back to in-memory storage:', error instanceof Error ? error.message : 'Unknown error');
+        this.redisEnabled = false;
+      }
+      // Fallback to in-memory storage on error
+      this.inMemoryStore.set(context.sessionId, context);
     }
   }
 
